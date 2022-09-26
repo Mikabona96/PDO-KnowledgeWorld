@@ -1,21 +1,12 @@
 {
-    "name": "boilerplate-frontend",
-    "version": "5.2.0",
-    "description": "boilerplate",
-    "author": "arziburst@gmail.com",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Arziburst/boilerplate.git"
-    },
+    "name": "pdo",
+    "version": "0.0.1",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
-        "clean": "rm -rf node_modules",
-        "toDocker": "docker build -t arziburst/norkamasagerka .",
-        "toDockerHub": "docker push arziburst/norkamasagerka",
-        "deploy": "npm run build && npm run toDocker && npm run toDockerHub"
+        "clean": "rm -rf node_modules"
     },
     "devDependencies": {
         "@squoosh/lib": "^0.4.0",

@@ -1,7 +1,7 @@
 // Core
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+// import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 const loadCss = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'css-loader',
@@ -14,6 +14,9 @@ const loadSass = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'sass-loader',
     options: {
         sourceMap,
+        sassOptions: {
+            outputStyle: 'compressed', // ??
+        },
     },
 });
 
@@ -37,7 +40,7 @@ export const loadProdCss = (): Configuration => ({
     module: {
         rules: [
             {
-                test: /.s?css$/,
+                test: /\.css|.scss|.sass$/,
                 use:  [
                     MiniCssExtractPlugin.loader,
                     loadCss({ sourceMap: false }),
@@ -47,13 +50,9 @@ export const loadProdCss = (): Configuration => ({
             },
         ],
     },
-    optimization: {
-        minimizer: [ new CssMinimizerPlugin() ],
-    },
     plugins: [
         new MiniCssExtractPlugin({
-            filename:      '[name].[contenthash:5].css',
-            chunkFilename: '[name].[contenthash:3].css',
+            filename: 'css/[name].[contenthash:3].css',
         }),
     ],
 });

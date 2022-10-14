@@ -1,7 +1,6 @@
 // Styles
 import 'normalize.css';
 import './main.scss';
+import './main2.scss';
 
-const a = {
-    a: " " 
-}
+export const test = {};

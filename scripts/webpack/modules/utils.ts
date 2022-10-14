@@ -4,22 +4,11 @@ import {
     DefinePlugin,
 } from 'webpack';
 import WebpackBar from 'webpackbar';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import HtmlMinimizerPlugin from 'html-minimizer-webpack-plugin';
 import dotenv from 'dotenv';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 export const connectBuildProgressIndicator = (): Configuration => ({
     plugins: [ new WebpackBar({ basic: true }) ],
-});
-
-export const connectBundleAnalyzer = (): Configuration => ({
-    plugins: [
-        new BundleAnalyzerPlugin({
-            analyzerMode:      'disabled',
-            openAnalyzer:      false,
-            generateStatsFile: true,
-        }),
-    ],
 });
 
 export const defineEnvVariables = (): Configuration => {
@@ -44,9 +33,10 @@ export const defineEnvVariables = (): Configuration => {
     };
 };
 
-export const htmlMinimizer = (): Configuration => ({
-    optimization: {
-        minimize:  true,
-        minimizer: [ new HtmlMinimizerPlugin() ],
-    },
+export const cleanDirectories = (): Configuration => ({
+    plugins: [
+        new CleanWebpackPlugin({
+            verbose: true,
+        }),
+    ],
 });

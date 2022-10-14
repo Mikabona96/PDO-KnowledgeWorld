@@ -15,12 +15,9 @@ export const getProdConfig = () => {
             devtool: false,
         },
         modules.cleanDirectories(),
-        modules.loadImagesProd(),
-        modules.loadProdCss(),
         modules.connectBuildProgressIndicator(),
-        modules.optimizeBuild(),
-        modules.connectBundleAnalyzer(),
+        modules.loadProdCss(),
+        modules.loadImagesProd(),
         modules.loadFontsProd(),
-        modules.htmlMinimizer(),
     );
 };

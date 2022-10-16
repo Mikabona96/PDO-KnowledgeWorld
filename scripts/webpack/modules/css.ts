@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import path from 'path';
 import glob from 'glob';
+import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 
 const loadCss = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'css-loader',
@@ -48,9 +49,10 @@ export const loadProdCss = (): Configuration => {
         const folder = pathFile.split('/').at(-2);
         newEntry = {
             ...newEntry,
-            [ `${folder}/${scriptName}` ]: `./${pathFile}`,
+            [ `${folder === 'src' ? '' : folder + '/'}${scriptName}` ]: `./${pathFile}`,
         };
     });
+
 
     return {
         entry:  newEntry,
@@ -68,9 +70,9 @@ export const loadProdCss = (): Configuration => {
             ],
         },
         plugins: [
+            new RemoveEmptyScriptsPlugin({ verbose: true }),
             new MiniCssExtractPlugin({
-                filename:    'css/[name].[contenthash:3].css',
-                ignoreOrder: true,
+                filename: 'css/[name].[contenthash:3].css',
             }),
         ],
     };

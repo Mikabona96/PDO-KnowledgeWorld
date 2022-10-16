@@ -69,6 +69,7 @@
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.1",
         "webpack-merge": "^5.8.0",
+        "webpack-remove-empty-scripts": "^1.0.1",
         "webpack-shell-plugin-next": "^2.2.2",
         "webpackbar": "^5.0.2"
     },

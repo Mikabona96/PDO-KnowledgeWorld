@@ -1,4 +1,9 @@
+@import './assets/variables.scss';
+
 // Assets
 body {
     background-color: #ff0000;
+}
+p {
+    color: $color_primary;
 }

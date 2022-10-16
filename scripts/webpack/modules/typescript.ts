@@ -5,6 +5,9 @@ import { Configuration } from 'webpack';
 import { nodeModulePath } from '../constants';
 
 export const loadTypeScript = (): Configuration => ({
+    entry: {
+        index: './src/index.ts',
+    },
     module: {
         rules: [
             {

@@ -42,6 +42,7 @@
         "eslint-plugin-react": "^7.31.8",
         "eslint-plugin-react-hooks": "^4.6.0",
         "fontmin-webpack": "^4.0.0",
+        "glob": "^8.0.3",
         "handlebars-loader": "^1.7.2",
         "html-minimizer-webpack-plugin": "^4.1.0",
         "html-webpack-plugin": "^5.5.0",

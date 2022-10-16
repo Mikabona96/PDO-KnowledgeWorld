@@ -1,5 +1,13 @@
+// Elements
+import { buttonFunction } from './elements';
+
+buttonFunction();
+
 export const test = {};
+
+console.log('start!!!!!!!!!!');
 setTimeout(() => {
-    alert('alert => ./src/index.ts');
+    console.log('setTimeout 1000');
+    // alert('alert => ./src/index.ts');
 }, 1000);
 

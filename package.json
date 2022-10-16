@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
+        "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
@@ -29,6 +30,7 @@
         "@typescript-eslint/parser": "^5.38.0",
         "app-root-path": "3.1.0",
         "babel-eslint": "^10.1.0",
+        "burst-generate-files": "^0.10.13",
         "clean-webpack-plugin": "^4.0.0",
         "cross-env": "^7.0.3",
         "css-loader": "^6.7.1",

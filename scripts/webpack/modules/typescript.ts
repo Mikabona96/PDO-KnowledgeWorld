@@ -27,5 +27,8 @@ export const loadTypeScript = (): Configuration => ({
             },
         ],
     },
+    resolve: {
+        extensions: [ '.ts', '.js' ],
+    },
 });
 

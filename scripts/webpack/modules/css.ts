@@ -1,7 +1,8 @@
 // Core
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
+// for fullbuild
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 import path from 'path';
 import glob from 'glob';
@@ -75,3 +76,28 @@ export const loadProdCss = (): Configuration => ({
         }),
     ],
 });
+
+
+export const loadFullProdCss = (): Configuration => ({
+    entry:  Object.values<string>(getPathsScssFiles()),
+    module: {
+        rules: [
+            {
+                test: /.s?css$/,
+                use:  [
+                    MiniCssExtractPlugin.loader,
+                    loadCss({ sourceMap: false }),
+                    'resolve-url-loader',
+                    loadSass({ sourceMap: true }),
+                ],
+            },
+        ],
+    },
+    plugins: [
+        new CssMinimizerPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:5].css',
+        }),
+    ],
+});
+

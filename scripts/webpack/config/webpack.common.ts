@@ -2,15 +2,23 @@
 import merge from 'webpack-merge';
 
 // Constants
-import { SOURCE_DIRECTORY, BUILD_DIRECTORY } from '../constants';
+import { BUILD_DIRECTORY } from '../constants';
 
 // Modules
 import * as modules from '../modules';
 
-export const getCommonConfig = () => {
+// Types
+import { EntryObject } from 'webpack';
+type Entry = {
+    entry: string | string[]
+    | (() => string | string[] | EntryObject | Promise<string | string[] | EntryObject>)
+    | EntryObject
+}
+
+export const getCommonConfig = (entry: Entry) => {
     return merge(
         {
-            entry:  [ SOURCE_DIRECTORY ],
+            ...entry,
             output: {
                 path:                BUILD_DIRECTORY,
                 filename:            'js/[name].[chunkhash].js',

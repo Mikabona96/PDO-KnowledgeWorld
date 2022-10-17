@@ -1,7 +1,10 @@
 // Core
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+
+import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
+import path from 'path';
+import glob from 'glob';
 
 const loadCss = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'css-loader',
@@ -14,13 +17,27 @@ const loadSass = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'sass-loader',
     options: {
         sourceMap,
-        sassOptions: {
-            outputStyle: 'compressed', // ??
-        },
     },
 });
 
+
+const getPathsScssFiles = () => {
+    let newEntry = {};
+
+    glob.sync('./src/**/*.scss', {}).forEach((pathFile) => {
+        const scriptName = path.parse(pathFile).name;
+        const folder = pathFile.split('/').at(-2);
+        newEntry = {
+            ...newEntry,
+            [ `${folder === 'src' ? '' : folder + '/'}${scriptName}` ]: `./${pathFile}`,
+        };
+    });
+
+    return newEntry;
+};
+
 export const loadDevCss = (): Configuration => ({
+    entry:  getPathsScssFiles(),
     module: {
         rules: [
             {
@@ -37,6 +54,7 @@ export const loadDevCss = (): Configuration => ({
 });
 
 export const loadProdCss = (): Configuration => ({
+    entry:  getPathsScssFiles(),
     module: {
         rules: [
             {
@@ -51,6 +69,7 @@ export const loadProdCss = (): Configuration => ({
         ],
     },
     plugins: [
+        new RemoveEmptyScriptsPlugin({ verbose: false }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:3].css',
         }),

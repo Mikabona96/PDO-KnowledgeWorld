@@ -9,19 +9,18 @@ import * as modules from '../modules';
 
 export const getProdConfig = () => {
     return merge(
-        getCommonConfig({
-            entry: {
-                index: './src/index.ts',
-            },
-        }),
+        getCommonConfig(),
         {
             mode:    'none', // none to remove bundle chunk size warning
             devtool: false,
         },
         modules.cleanDirectories(),
-        modules.connectBuildProgressIndicator(),
-        modules.loadProdCss(),
         modules.loadImagesProd(),
+        modules.loadProdCss(),
+        modules.connectBuildProgressIndicator(),
+        modules.optimizeBuild(),
+        modules.connectBundleAnalyzer(),
         modules.loadFontsProd(),
+        modules.htmlMinimizer(),
     );
 };

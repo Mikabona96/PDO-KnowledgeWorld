@@ -7,10 +7,7 @@
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
         "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
-        "clean": "rm -rf node_modules",
-        "toDocker": "docker build -t arziburst/norkamasagerka .",
-        "toDockerHub": "docker push arziburst/norkamasagerka",
-        "deploy": "npm run build && npm run toDocker && npm run toDockerHub"
+        "clean": "rm -rf node_modules"
     },
     "devDependencies": {
         "@squoosh/lib": "^0.4.0",

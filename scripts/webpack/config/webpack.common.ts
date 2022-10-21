@@ -22,7 +22,7 @@ export const getCommonConfig = (entry: Entry) => {
             output: {
                 path:                BUILD_DIRECTORY,
                 filename:            'js/[name].[chunkhash].js',
-                publicPath:          '/',
+                publicPath:          './',
                 assetModuleFilename: 'assets/[name][ext]',
                 hashDigestLength:    3,
             },

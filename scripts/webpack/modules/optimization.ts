@@ -1,13 +1,14 @@
 // Core
 import { ContextReplacementPlugin, Configuration } from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 /**
  * production — оптимизация включена только в mode: 'production'
  * development — оптимизация включена только в mode: 'development'
  * ✓ — оптимизация включена в mode: 'production' и в mode: 'development'
  */
-export const optimizeFullBuild = (): Configuration => ({
+export const optimizeBuild = (): Configuration => ({
     optimization: {
         nodeEnv: 'production',
 
@@ -104,8 +105,16 @@ export const optimizeFullBuild = (): Configuration => ({
             },
         },
         // Выносит webpack runtime каждого entrypoint в отдельный чанк. false по-умолчанию.
-        runtimeChunk: false,
+        runtimeChunk: true,
     },
+});
+
+export const cleanDirectories = (): Configuration => ({
+    plugins: [
+        new CleanWebpackPlugin({
+            verbose: true,
+        }),
+    ],
 });
 
 export const filterMomentLocales = (): Configuration => ({

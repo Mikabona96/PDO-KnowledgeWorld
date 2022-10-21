@@ -2,32 +2,33 @@
 import merge from 'webpack-merge';
 
 // Constants
-import { BUILD_DIRECTORY } from '../constants';
+import { SOURCE_DIRECTORY, BUILD_DIRECTORY } from '../constants';
 
 // Modules
 import * as modules from '../modules';
 
-// Types
-import { EntryObject } from 'webpack';
-type Entry = {
-    entry: string | string[]
-    | (() => string | string[] | EntryObject | Promise<string | string[] | EntryObject>)
-    | EntryObject
-}
+// https://webpack.js.org/configuration/
+export const getCommonConfig = () => {
+    const { NODE_ENV } = process.env;
+    const IS_DEVELOPMENT = NODE_ENV === 'development';
 
-export const getCommonConfig = (entry: Entry) => {
     return merge(
         {
-            ...entry,
+            entry:  [ SOURCE_DIRECTORY ],
             output: {
-                path:                BUILD_DIRECTORY,
-                filename:            'js/[name].[chunkhash].js',
-                publicPath:          './',
+                path:     BUILD_DIRECTORY,
+                filename: IS_DEVELOPMENT                 // entry point bundle name
+                    ? 'js/entrypoint.[fullhash].chunk.js'
+                    : 'js/[chunkhash].bundle.js',
+                chunkFilename: IS_DEVELOPMENT            // chunk name
+                    ? 'js/[name].[fullhash].chunk.js'
+                    : 'js/[chunkhash].bundle.js',
+                //hashDigestLength:    5,
                 assetModuleFilename: 'assets/[name][ext]',
-                hashDigestLength:    3,
+                hashDigestLength:    5,
             },
             resolve: {
-                extensions: [ '.ts', '.js' ],
+                extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
             },
         },
         modules.loadTypeScript(),

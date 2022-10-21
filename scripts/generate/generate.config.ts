@@ -11,9 +11,14 @@ CLIGen(path, [
                 outputPath:       './src/elements/__elementName__(pascalCase)',
                 markers:          [
                     {
-                        pattern:        '// Re-export',
+                        pattern:        '// MarkerGen re-export',
                         pathToMarker:   './src/elements/index.ts',
                         markerTemplate: './scripts/generate/templates/element/.genignore/reExport.ts',
+                    },
+                    {
+                        pattern:        '// MarkerGen import elements styles',
+                        pathToMarker:   './src/main.scss',
+                        markerTemplate: './scripts/generate/templates/element/.genignore/importStyles.ts',
                     },
                 ],
             },
@@ -28,9 +33,14 @@ CLIGen(path, [
                 outputPath:       './src/components/__componentName__(pascalCase)',
                 markers:          [
                     {
-                        pattern:        '// Re-export',
+                        pattern:        '// MarkerGen re-export',
                         pathToMarker:   './src/components/index.ts',
                         markerTemplate: './scripts/generate/templates/component/.genignore/reExport.ts',
+                    },
+                    {
+                        pattern:        '// MarkerGen import components styles',
+                        pathToMarker:   './src/main.scss',
+                        markerTemplate: './scripts/generate/templates/component/.genignore/importStyles.ts',
                     },
                 ],
             },

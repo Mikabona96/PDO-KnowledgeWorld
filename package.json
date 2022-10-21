@@ -3,12 +3,14 @@
     "version": "0.0.1",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
-        "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
-        "fullbuild": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/fullBuild\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
-        "clean": "rm -rf node_modules"
+        "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
+        "clean": "rm -rf node_modules",
+        "toDocker": "docker build -t arziburst/norkamasagerka .",
+        "toDockerHub": "docker push arziburst/norkamasagerka",
+        "deploy": "npm run build && npm run toDocker && npm run toDockerHub"
     },
     "devDependencies": {
         "@squoosh/lib": "^0.4.0",
@@ -45,7 +47,6 @@
         "eslint-plugin-react": "^7.31.8",
         "eslint-plugin-react-hooks": "^4.6.0",
         "fontmin-webpack": "^4.0.0",
-        "glob": "^8.0.3",
         "handlebars-loader": "^1.7.2",
         "html-minimizer-webpack-plugin": "^4.1.0",
         "html-webpack-plugin": "^5.5.0",
@@ -72,7 +73,6 @@
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.1",
         "webpack-merge": "^5.8.0",
-        "webpack-remove-empty-scripts": "^1.0.1",
         "webpack-shell-plugin-next": "^2.2.2",
         "webpackbar": "^5.0.2"
     },

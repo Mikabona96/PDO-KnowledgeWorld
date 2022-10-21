@@ -9,11 +9,7 @@ import * as modules from '../modules';
 
 export const getDevConfig = () => {
     return merge(
-        getCommonConfig({
-            entry: {
-                index: './src/index.ts',
-            },
-        }),
+        getCommonConfig(),
         {
             mode:    'development',
             devtool: 'eval-cheap-module-source-map',

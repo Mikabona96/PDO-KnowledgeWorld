@@ -1,0 +1,112 @@
+@media (max-width: 375px) {
+    .SecondSection {
+        display: flex;
+        flex-direction: column;
+        max-width: 375px;
+        & .left {
+            position: relative;
+            max-width: 375px;
+            height: 552px;
+            margin: 0;
+            & .info {
+                position: absolute;
+                left: 23px;
+                top: 32px;
+                & .title {
+                    font-family: $lexend;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 25px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+                & .description {
+                    margin-top: 24px;
+                    max-width: 316px;
+                    height: 196px;
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: #000000;
+                }
+            }
+        }
+        & .right {
+            margin-top: 28px;
+            & .img-wrapper {
+                position: relative;
+                overflow: hidden;
+                height: 303px;
+                width: 100%;
+                & img {
+                    position: absolute;
+                    height: 303px;
+                    width: 476px;
+                    top: 0px;
+                    left: -99px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1360px) {
+    .SecondSection {
+        width: 1360px;
+        display: flex;
+        & .left {
+            width: 50%;
+            position: relative;
+            & .info {
+                position: absolute;
+                left: 48px;
+                top: 243px;
+                & .title {
+                    width: 565px;
+                    height: 40px;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 40px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+                & .description {
+                    margin-top: 24px;
+                    width: 585px;
+                    height: 168px;
+                    left: 48px;
+                    top: 469px;
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #000000;
+                }
+            }
+        }
+        & .right {
+            width: 50%;
+            padding: 48px;
+            height: 880px;
+            & .img-wrapper {
+                position: relative;
+                overflow: hidden;
+                height: 783px;
+                width: 100%;
+                & img {
+                    position: absolute;
+                    top: 0px;
+                    left: -336px;
+                }
+            }
+        }
+    }
+}

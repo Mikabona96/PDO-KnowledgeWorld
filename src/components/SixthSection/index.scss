@@ -1,0 +1,146 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+.SixthSection {
+    width: $section-width;
+    min-height: 880px;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        & .title {
+            margin-left: 48px;
+            width: 473px;
+            height: 28px;
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        & .buttons {
+            margin-right: 48px;
+            display: flex;
+            justify-content: space-between;
+            width: 337px;
+            & .button {
+                width: 161px;
+                height: 40px;
+                border: 1px solid $green;
+                a {
+                    text-decoration: none;
+                }
+            }
+            & .button.make-booking {
+                background: #019748;
+                & a {
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
+            }
+            & .button.view-booking {
+                background: #fff;
+                & a {
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: $green;
+                }
+            }
+        }
+
+    }
+    & .card-wrapper {
+        margin-top: 100px;
+        margin-left: 6px;
+        height: 493px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        & .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: 42px;
+            margin-bottom: 20px;
+            width: 393px;
+            &:last-child {
+                margin-right: 0px;
+            }
+            & img {
+                width: 393px;
+                height: 284px;
+            }
+            & .card-date {
+                position: absolute;
+                padding: 0px 10px;
+                background: $green;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 28px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+            }
+            & .card-title {
+                margin-top: 32px;
+                position: unset;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 25px;
+                color: #000000;
+            }
+            & .card-description {
+                margin-top: 24px;
+                font-family: $inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                color: #000000;
+            }
+            & .card-link {
+                margin-top: 17px;
+                font-family: $inter;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 28px;
+                color: #019748;
+                text-decoration: none;
+            }
+        }
+    }
+    & .view-all {
+        margin-top: 111px;
+        margin-bottom: 48px;
+        border: 0;
+        padding: 10px 16px;
+        background: $green;
+        cursor: pointer;
+        font-family: $lexend;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+}

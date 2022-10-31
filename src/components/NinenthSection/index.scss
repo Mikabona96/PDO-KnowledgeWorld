@@ -1,0 +1,39 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+
+.NinenthSection {
+    padding: 0 48px 48px 48px;
+    & .title {
+        margin-top: 64px;
+        font-family: $lexend;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    & .description {
+        margin-top: 24px;
+        width: 535px;
+        font-family: $inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        color: #000000;
+    }
+    & .coordinates {
+        margin-top: 32px;
+        margin-bottom: 35px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #000000;
+    }
+}

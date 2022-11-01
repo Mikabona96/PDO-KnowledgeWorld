@@ -5,6 +5,87 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    & .makebooking-stepper {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 640px;
+        height: 880px;
+        padding: 24px;
+        background: rgb(179, 178, 178);
+        z-index: 20;
+        & .top {
+            & .title {
+                margin-left: 48px;
+                width: 473px;
+                height: 28px;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 28px;
+                text-transform: uppercase;
+                color: #000000;
+                margin: 0px;
+            }
+        }
+        & .progress {
+            width: 100%;
+            height: 6px;
+            margin-top: 30px;
+            background: #019748;
+        }
+        & .step {
+            margin-top: 20px;
+        }
+        & .step1 {
+            & .step-title {
+                display: flex;
+                & .step-title.green {
+                    margin-left: 48px;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    margin: 0px;
+                    padding: 10px 15px;
+                    background: #019748;
+                }
+                & .step-title.grey {
+                    margin-left: 48px;
+                    font-family: $lexend;
+                    width: 100%;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    color: #000000;
+                    margin: 0px;
+                    padding: 10px 15px;
+                    background: rgb(248,247,250);
+                }
+            }
+            & .content {
+                display: flex;
+                flex-direction: row;
+                & .left {
+                    display: flex;
+                    flex-direction: column;
+                }
+                & .right {
+                    & form {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
     & .top {
         width: 100%;
         display: flex;
@@ -36,27 +117,23 @@
             }
             & .button.make-booking {
                 background: #019748;
-                & a {
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: #FFFFFF;
-                }
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                text-transform: uppercase;
+                color: #FFFFFF;
             }
             & .button.view-booking {
                 background: #fff;
-                & a {
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: $green;
-                }
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                text-transform: uppercase;
+                color: $green;
             }
         }
 

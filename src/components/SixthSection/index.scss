@@ -79,6 +79,7 @@
         & .steps-container {
             display: flex;
             width: 100%;
+            // transition: .5s ease;
             & .step {
                 flex-shrink: 0;
                 width: 100%;
@@ -86,6 +87,8 @@
                 height: 829px;
                 position: relative;
                 margin-right: 24px;
+                transition: 1.5s ease;
+                opacity: 0;
                 & .step-title {
                     display: flex;
                     & .step-title.green {
@@ -514,6 +517,9 @@
                     color: $green;
                     border: 1px solid $green;
                 }
+            }
+            & .step.active {
+                opacity: 1;
             }
             & .step2 {
                 & .content {

@@ -138,20 +138,32 @@ export const sixthSectionFunction = () => {
     const nextBtns = document.querySelectorAll('.btn.next-step');
     const prevBtns = document.querySelectorAll('.btn.prev-step');
     const step = (document.querySelector('.step')) as HTMLElement;
+    const steps = document.querySelectorAll('.step');
     const width = step.clientWidth + 24;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let index = 0;
+
+    const removeStepActive = () => {
+        steps.forEach((step) => {
+            step.classList.remove('active');
+        });
+    };
+
     nextBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
+            removeStepActive();
             index += 1;
             stepsContainer.style.transform = `translateX(-${index * width}px)`;
+            steps[ index ].classList.add('active');
         });
     });
     console.log(prevBtns);
 
     prevBtns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
+            removeStepActive();
             index -= 1;
+            steps[ index ].classList.add('active');
             stepsContainer.style.transform = `translateX(-${index * width}px)`;
         });
     });

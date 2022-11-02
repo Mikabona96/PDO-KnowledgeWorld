@@ -11,64 +11,302 @@
             <h3 class="title">MAKE A BOOKING</h3>
             <div class="close">X</div>
         </div>
-        <div class="progress"></div>
-        <div class="step step1">
-            <div class="step-title">
-                <h3 class="step-title green">1</h3>
-                <h3 class="step-title grey">BOOKING DETAILS</h3>
+        <div class="progress">
+            <div class="circle-green">
+                <div class="circle-white"></div>
             </div>
-            <div class="content">
-                <div class="left">
-                    <h5 class="info">Booking type</h5>
-                    <h5 class="info">Your Details</h5>
-                    <p class="info-description">Provide Your personal details to confirm your activity</p>
-                    <h5 class="info">Booking Details</h5>
+            <div class="circle-green">
+                <div class="circle-white"></div>
+            </div>
+            <div class="circle-green">
+                <div class="circle-white"></div>
+            </div>
+        </div>
+        <div class="steps-container">
+            <div class="step step1">
+                <div class="step-title">
+                    <h3 class="step-title green">1</h3>
+                    <h3 class="step-title grey">BOOKING DETAILS</h3>
                 </div>
-                <div class="right">
-                    <form>
-                        <select name="" id="" class="booking-type">
-                            <option value="Individual/family">Individual/family</option>
-                            <option value="Individual/family">Individual/family</option>
-                            <option value="Individual/family">Individual/family</option>
-                            <option value="Individual/family">Individual/family</option>
-                        </select>
-                        <input type="text" class="name">
-                        <input type="text" class="second-name">
-                        <div class="code-number">
-                            <select name="" class="code" id="">
-                                <option value="+1">+1</option>
-                                <option value="+1">+1</option>
-                                <option value="+1">+1</option>
-                                <option value="+1">+1</option>
-                            </select>
-                            <input type="text" class="number">
-                        </div>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" name="" id="">
-                            <span class="checkbox-label">Send Booking Reminders to me by SMS</span>
-                        </div>
-                        <input type="email" name="email" id="">
-                        <select name="" id="" class="adult-visitors">
-                            <option value="Number of Adult Visitors (18+)">Number of Adult Visitors (18+)</option>
-                            <option value="Number of Adult Visitors (18+)">1</option>
-                            <option value="Number of Adult Visitors (18+)">2</option>
-                            <option value="Number of Adult Visitors (18+)">3</option>
-                            <option value="Number of Adult Visitors (18+)">4</option>
-                        </select>
-                        <select name="" id="" class="child-visitors">
-                            <option value="Number of Child Visitors">Number of Child Visitors</option>
-                            <option value="Number of Child Visitors">1</option>
-                            <option value="Number of Child Visitors">2</option>
-                            <option value="Number of Child Visitors">3</option>
-                            <option value="Number of Child Visitors">4</option>
-                        </select>
-                        <select name="" id="" class="country">
-                            <option value="">Country</option>
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                        </select>
-                    </form>
+                <div class="content">
+                    <div class="left">
+                        <h5 class="info">Booking type</h5>
+                        <h5 class="info">Your Details</h5>
+                        <p class="info-description">Provide Your personal details to confirm your activity</p>
+                        <h5 class="info">Booking Details</h5>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <div class="select-wrapper select-wrapper-booking-type">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="0" for="news">Individual/Family</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="magazine">Individual</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">Family</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        Individual/Family
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Your Name" class="name">
+                            <input type="text" placeholder="Your second name" class="second-name">
+                            <div class="code-number">
+                                <div class="select-wrapper select-wrapper-code">
+                                    <div class="select-box">
+                                        <div class="options-container">
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+1" for="news">+1</label>
+                                            </div>
+
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+2" for="magazine">+2</label>
+                                            </div>
+
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+9" for="publication">+9</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="selected">
+                                            +1
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" placeholder="Number" class="number">
+                            </div>
+                            <div class="checkbox-wrapper checkbox-wrapper-sms">
+                                <label class="container"> Send Booking Reminders to me by SMS
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <input class="email" placeholder="Email adress" type="email" name="email" id="">
+                            <div class="checkbox-wrapper checkbox-wrapper-newsletter">
+                                <label class="container"> Sign up for our Knowledge World newsletter
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="select-wrapper select-wrapper-adult-visitors">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="news">1</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="magazine">2</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">3</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        Number of Adult Visitors (18+)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select-wrapper select-wrapper-child-visitors">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="news">1</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="magazine">2</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">3</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        Number of Child Visitors
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select-wrapper select-wrapper-country">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="US" for="news">US</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="UK" for="magazine">UK</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="CA" for="publication">CA</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        Country
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <button class="btn next-step">NEXT STEP</button>
+            </div>
+            <div class="step step2">
+                <div class="step-title">
+                    <h3 class="step-title green">2</h3>
+                    <h3 class="step-title grey">Pick booking day and time</h3>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <h5 class="info">Select Centre</h5>
+                        <h5 class="info">Select date</h5>
+                        <h5 class="info">Select time slot</h5>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <div class="select-wrapper select-wrapper-center">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="Ecoman Centre" for="news">Ecoman Centre</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="Centre 2" for="magazine">Centre 2</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="Center 3" for="publication">Center 3</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        Ecoman Centre
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date-wrapper">
+                                <input type="date" class="date" name="" id="">
+                            </div>
+                            <div class="select-wrapper select-wrapper-time">
+                                <div class="select-box">
+                                    <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="08:00 - 09:00" for="news">08:00 - 09:00</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="09:00 - 10:00" for="magazine">09:00 - 10:00</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="10:00 - 11:00" for="publication">10:00 - 11:00</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="selected">
+                                        08:00 - 09:00
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button class="btn next-step">NEXT STEP</button>
+                <button class="btn prev-step">STEP BACK</button>
+            </div>
+            <div class="step step3">
+                <div class="step-title">
+                    <h3 class="step-title green">3</h3>
+                    <h3 class="step-title grey">SUMMARY</h3>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <div class="top">
+                            <h3 class="title">EcOman Centre</h3>
+                            <ul class="date-time">
+                                <li>Date 26.05.2022</li>
+                                <li>Time 08:00 - 09:00</li>
+                            </ul>
+                        </div>
+                        <ul class="bottom">
+                            <div class="wrapper">
+                                <label>Booking Type</label>
+                                <li>Individual/Family</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Name</label>
+                                <li>John Doe</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Contact Phone</label>
+                                <li>+49(Germany)-94847302</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Email</label>
+                                <li>fake@gmail.com</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Number of Adult Visitors (18+)</label>
+                                <li>2</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Number of Child Visitors</label>
+                                <li>1</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Country</label>
+                                <li>Oman</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <h5 class="title">Confirm Details</h5>
+                        <p class="description">Please check and confirmall your booking details.If you need to cancelthen please contact us.</p>
+                        <p class="description">If you need to update any details then plese use the linked provided.</p>
+                        <ul class="links">
+                            <li><a href="#">Change my details</a></li>
+                            <li><a href="#">Change Date/Time</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn next-step">NEXT STEP</button>
+                <button class="btn prev-step">STEP BACK</button>
             </div>
         </div>
     </div>

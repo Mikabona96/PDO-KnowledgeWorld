@@ -1,19 +1,21 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-@media (max-width: 375px) {
+@media (max-width: 1359px) {
     .SecondSection {
         display: flex;
-        flex-direction: column;
-        max-width: 375px;
+        max-width: 100%;
+        padding: 24px 24px;
+        justify-content: space-between;
         & .left {
             position: relative;
-            max-width: 375px;
-            height: 552px;
+            width: 40%;
+            height: auto;
             margin: 0;
+            display: flex;
             & .info {
                 position: absolute;
-                left: 23px;
+                width: 100%;
                 top: 32px;
                 & .title {
                     font-family: $lexend;
@@ -27,8 +29,8 @@
                 }
                 & .description {
                     margin-top: 24px;
-                    max-width: 316px;
-                    height: 196px;
+                    width: 100%;
+                    height: fit-content;
                     font-family: $inter;
                     font-style: normal;
                     font-weight: 400;
@@ -39,12 +41,93 @@
             }
         }
         & .right {
-            margin-top: 28px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            & .img-wrapper {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 603px;
+                & img {
+                    position: absolute;
+                    height: 603px;
+                    width: 992px;
+                    top: 0px;
+                }
+            }
+        }
+    }
+    .SecondSection.rtl {
+        direction: rtl;
+        & .left {
+            left: auto;
+            right: 24px;
+            & .info {
+                direction: ltr;
+                text-align: end;
+                padding-left: 24px;
+                & .title {
+                    width: fit-content;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .SecondSection {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+        padding: 0 24px;
+        & .left {
+            position: relative;
+            max-width: 576px;
+            width: 100%;
+            height: 468px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            & .info {
+                position: absolute;
+                width: 100%;
+                top: 32px;
+                & .title {
+                    font-family: $lexend;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 25px;
+                    display: flex;
+                    align-items: center;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+                & .description {
+                    margin-top: 24px;
+                    width: 100%;
+                    height: fit-content;
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: #000000;
+                }
+            }
+        }
+        & .right {
+            margin-top: 70px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
             & .img-wrapper {
                 position: relative;
                 overflow: hidden;
                 height: 303px;
-                width: 100%;
+                width: 375px;
                 & img {
                     position: absolute;
                     height: 303px;
@@ -56,10 +139,59 @@
         }
     }
 }
+
+@media (max-width: 576px) {
+    .SecondSection {
+        align-items: unset;
+        & .left {
+            max-width: 576px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .SecondSection {
+        max-width: 375px;
+        padding: 0;
+        & .left {
+            max-width: 375px;
+            height: 552px;
+            display: unset;
+            justify-content: unset;
+            & .info {
+                position: absolute;
+                left: 23px;
+                & .description {
+                    margin-top: 24px;
+                    max-width: 316px;
+                    height: 196px;
+                }
+            }
+        }
+        & .right {
+            margin-top: 28px;
+            & .img-wrapper {
+                width: 100%;
+            }
+        }
+    }
+    .SecondSection.rtl {
+        direction: rtl;
+        & .left {
+            left: auto;
+            right: 24px;
+            & .info {
+                padding-right: 24px;
+            }
+        }
+    }
+}
 @media (min-width: 1360px) {
     .SecondSection {
         width: 1360px;
         display: flex;
+        margin: auto;
+
         & .left {
             width: 50%;
             position: relative;
@@ -108,6 +240,18 @@
                     position: absolute;
                     top: 0px;
                     left: -336px;
+                }
+            }
+        }
+    }
+    .SecondSection.rtl {
+        flex-direction: row-reverse;
+        text-align: end;
+        & .left {
+            & .info {
+                & .title {
+                    width: fit-content;
+                    margin-left: auto;
                 }
             }
         }

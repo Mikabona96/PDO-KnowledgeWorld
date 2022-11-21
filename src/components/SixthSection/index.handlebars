@@ -1,4 +1,4 @@
-<section class="SixthSection">
+<section class="SixthSection rtl">
     <div class="top">
         <h3 class="title">Upcomming Events</h3>
         <div class="buttons">
@@ -9,10 +9,10 @@
     <div class="makebooking-stepper">
         <div class="top">
             <h3 class="title">MAKE A BOOKING</h3>
-            <div class="close">X</div>
+            <div class="close"><div></div></div>
         </div>
         <div class="progress">
-            <div class="circle-green">
+            <div class="circle-green active">
                 <div class="circle-white"></div>
             </div>
             <div class="circle-green">
@@ -21,6 +21,8 @@
             <div class="circle-green">
                 <div class="circle-white"></div>
             </div>
+            <div class="progress-bar"></div>
+            <div class="current-progress"></div>
         </div>
         <div class="steps-container">
             <div class="step step1 active">
@@ -40,6 +42,20 @@
                             <div class="select-wrapper select-wrapper-booking-type">
                                 <div class="select-box">
                                     <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="0" for="news">Individual/Family</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="magazine">Individual</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">Family</label>
+                                        </div>
                                         <div class="option">
                                             <input type="radio" class="radio" id="" name="category" />
                                             <label data-value="0" for="news">Individual/Family</label>
@@ -81,10 +97,24 @@
                                                 <input type="radio" class="radio" id="" name="category" />
                                                 <label data-value="+9" for="publication">+9</label>
                                             </div>
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+1" for="news">+1</label>
+                                            </div>
+
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+2" for="magazine">+2</label>
+                                            </div>
+
+                                            <div class="option">
+                                                <input type="radio" class="radio" id="" name="category" />
+                                                <label data-value="+9" for="publication">+9</label>
+                                            </div>
                                         </div>
 
                                         <div class="selected">
-                                            +1
+                                            <span>+1</span>
                                         </div>
                                     </div>
                                 </div>
@@ -106,6 +136,20 @@
                             <div class="select-wrapper select-wrapper-adult-visitors">
                                 <div class="select-box">
                                     <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="news">1</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="magazine">2</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">3</label>
+                                        </div>
                                         <div class="option">
                                             <input type="radio" class="radio" id="" name="category" />
                                             <label data-value="1" for="news">1</label>
@@ -144,6 +188,20 @@
                                             <input type="radio" class="radio" id="" name="category" />
                                             <label data-value="2" for="publication">3</label>
                                         </div>
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="1" for="news">1</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="magazine">2</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="2" for="publication">3</label>
+                                        </div>
                                     </div>
 
                                     <div class="selected">
@@ -154,6 +212,20 @@
                             <div class="select-wrapper select-wrapper-country">
                                 <div class="select-box">
                                     <div class="options-container">
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="US" for="news">US</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="UK" for="magazine">UK</label>
+                                        </div>
+
+                                        <div class="option">
+                                            <input type="radio" class="radio" id="" name="category" />
+                                            <label data-value="CA" for="publication">CA</label>
+                                        </div>
                                         <div class="option">
                                             <input type="radio" class="radio" id="" name="category" />
                                             <label data-value="US" for="news">US</label>
@@ -258,40 +330,40 @@
                 <div class="content">
                     <div class="left">
                         <div class="top">
-                            <h3 class="title">EcOman Centre</h3>
+                            <h3 class="title"></h3>
                             <ul class="date-time">
-                                <li>Date 26.05.2022</li>
-                                <li>Time 08:00 - 09:00</li>
+                                <li class="date">Date <span></span></li>
+                                <li class="time">Time <span></span></li>
                             </ul>
                         </div>
                         <ul class="bottom">
                             <div class="wrapper">
                                 <label>Booking Type</label>
-                                <li>Individual/Family</li>
+                                <li class="bookingType"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Name</label>
-                                <li>John Doe</li>
+                                <li class="name"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Contact Phone</label>
-                                <li>+49(Germany)-94847302</li>
+                                <li class="phone"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Email</label>
-                                <li>fake@gmail.com</li>
+                                <li class="email"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Number of Adult Visitors (18+)</label>
-                                <li>2</li>
+                                <li class="adultsCount"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Number of Child Visitors</label>
-                                <li>1</li>
+                                <li class="childsCount"></li>
                             </div>
                             <div class="wrapper">
                                 <label>Country</label>
-                                <li>Oman</li>
+                                <li class="country"></li>
                             </div>
                         </ul>
                     </div>
@@ -308,39 +380,112 @@
                 <button class="btn next-step">NEXT STEP</button>
                 <button class="btn prev-step">STEP BACK</button>
             </div>
+            <div class="step step4">
+                <h3 class="title">Thank you for your booking!</h3>
+                <p class="description">Our representatives will contact you to confirm the booking for Wednesday 26.05.2022 at EcOman Centre at 08:00 a.m.</p>
+                <div class="event-info">
+                    <div class="place">EcOman Centre</div>
+                    <ul class="time-date">
+                        <li>Date <span>26.05.2022</span></li>
+                        <li>Time <span>08:00 - 09:00</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="findbooking-stepper">
+        <div class="top">
+            <h3 class="title">FIND YOUR BOOKING</h3>
+            <div class="close"><div></div></div>
+        </div>
+        <div class="step step1 active">
+            <div class="step-title"><h3 class="title">Enter your details</h3></div>
+            <div class="findBooking">
+                <h5 class="title">Name or Email</h5>
+                <input type="text" placeholder="Your name" class="name">
+            </div>
+            <div class="findBooking">
+                <h5 class="title">Booking Ref</h5>
+                <input type="text" placeholder="Your second name" class="secondName">
+            </div>
+            <button class="find">FIND</button>
+        </div>
+        <div class="step step2">
+               <div class="step-title"><h3 class="title">YOUR BOOKING<span>#12838472</span></h3></div>
+               <div class="content">
+                    <div class="left">
+                        <div class="top">
+                            <h3 class="title">Ecoman Center</h3>
+                            <ul class="date-time">
+                                <li class="date">Date <span>26.05.22</span></li>
+                                <li class="time">Time <span>08:00 - 09:00</span></li>
+                            </ul>
+                        </div>
+                        <ul class="bottom">
+                            <div class="wrapper">
+                                <label>Booking Type</label>
+                                <li class="bookingType">Individual/Family</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Name</label>
+                                <li class="name">Jon Doe</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Contact Phone</label>
+                                <li class="phone">+49(Germany)-94847302</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Email</label>
+                                <li class="email">fake@gmail.com</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Number of Adult Visitors (18+)</label>
+                                <li class="adultsCount">2</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Number of Child Visitors</label>
+                                <li class="childsCount">1</li>
+                            </div>
+                            <div class="wrapper">
+                                <label>Country</label>
+                                <li class="country">Oman</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="card-wrapper">
         <div class="card">
-            <img src="./assets/images/6th-section-img-1.png" alt="">
+            <img draggable="false" src="./assets/images/6th-section-img-1.png" alt="">
             <div class="card-date">Mon 12,<br/>August 2022</div>
             <h5 class="card-title">The EcoOman Centre</h5>
             <p class="card-description">The EcOman Centre forms a unique learning campus with two of PDO's previous Gifts to the Nation - the Oil & Gas Exhibition Centre.</p>
             <a href="#" class="card-link">Learn more</a>
         </div>
         <div class="card">
-            <img src="./assets/images/6th-section-img-2.png" alt="">
+            <img draggable="false" src="./assets/images/6th-section-img-2.png" alt="">
             <div class="card-date">Mon 12,<br/>August 2022</div>
             <h5 class="card-title">The EcoOman Centre</h5>
             <p class="card-description">The EcOman Centre forms a unique learning campus with two of PDO's previous Gifts to the Nation - the Oil & Gas Exhibition Centre.</p>
             <a href="#" class="card-link">Learn more</a>
         </div>
         <div class="card">
-            <img src="./assets/images/6th-section-img-3.png" alt="">
+            <img draggable="false" src="./assets/images/6th-section-img-3.png" alt="">
             <div class="card-date">Mon 12,<br/>August 2022</div>
             <h5 class="card-title">The EcoOman Centre</h5>
             <p class="card-description">The EcOman Centre forms a unique learning campus with two of PDO's previous Gifts to the Nation - the Oil & Gas Exhibition Centre.</p>
             <a href="#" class="card-link">Learn more</a>
         </div>
         <div class="card">
-            <img src="./assets/images/6th-section-img-3.png" alt="">
+            <img draggable="false" src="./assets/images/6th-section-img-3.png" alt="">
             <div class="card-date">Mon 12,<br/>August 2022</div>
             <h5 class="card-title">The EcoOman Centre</h5>
             <p class="card-description">The EcOman Centre forms a unique learning campus with two of PDO's previous Gifts to the Nation - the Oil & Gas Exhibition Centre.</p>
             <a href="#" class="card-link">Learn more</a>
         </div>
         <div class="card">
-            <img src="./assets/images/6th-section-img-3.png" alt="">
+            <img draggable="false" src="./assets/images/6th-section-img-3.png" alt="">
             <div class="card-date">Mon 12,<br/>August 2022</div>
             <h5 class="card-title">The EcoOman Centre</h5>
             <p class="card-description">The EcOman Centre forms a unique learning campus with two of PDO's previous Gifts to the Nation - the Oil & Gas Exhibition Centre.</p>

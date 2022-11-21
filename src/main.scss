@@ -3,6 +3,7 @@
 
 // MarkerGen import elements styles
 // MarkerGen import components styles
+@import './components/Footer/index.scss';
 @import './components/NinenthSection/index.scss';
 @import './components/EighthSection/index.scss';
 @import './components/SeventhSection/index.scss';
@@ -22,7 +23,7 @@
 
 @media (min-width: 1360px) {
     .main {
-        width: 1360px;
+        width: 100%;
         margin: 0 auto;
     }
 }

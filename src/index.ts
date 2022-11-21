@@ -7,3 +7,6 @@ import './main.scss';
 // TS Modules
 import './components';
 import './elements';
+
+
+let rtl = false;

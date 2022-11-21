@@ -1,13 +1,16 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-@media (max-width: 375px) {
+@media (max-width: 1359px) {
     .ThirdSection {
         display: flex;
-        flex-direction: column-reverse;
-        height: 1268px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: auto;
         overflow: hidden;
         & .left {
+            width: 375px;
             height: 515px;
             position: relative;
             & .image-container {
@@ -39,11 +42,11 @@
     
         & .right {
             position: relative;
-            height: 724px;
+            height: auto;
+            width: 40%;
             margin-top: 32px;
             padding-left: 24px;
             & .description {
-                width: 327px;
                 font-family: $inter;
                 font-style: normal;
                 font-weight: 400;
@@ -62,6 +65,99 @@
             }
         }
     }
+    .ThirdSection.rtl {
+        flex-direction: row-reverse;
+            text-align: end;
+        & .right {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .ThirdSection {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+        & .left {
+            width: 375px;
+            height: 515px;
+            position: relative;
+            & .image-container {
+                position: absolute;
+                top: 15px;
+                left: -10px;
+                & .image-wrapper {
+                    padding: 27px 21px;
+                    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 100%);
+                    position: relative;
+                    overflow: hidden;
+                    height: 820px;
+                    & img {
+                        width: 353px;
+                        height: 440px;
+                        &:first-child {
+                            width: 351px;
+                            height: 440px;
+                        }
+                        &:last-child {
+                            margin-top: 33px;
+                            width: 353px;
+                            height: 440px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        & .right {
+            position: relative;
+            height: auto;
+            margin-top: 32px;
+            padding-left: 24px;
+            width: auto;
+            & .description {
+                font-family: $inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                color: #000000;
+                &:first-child {
+                    
+                }
+                &:nth-child(2) {
+                    margin-top: 12px;
+                }
+                &:last-child {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+    .ThirdSection.rtl {
+        flex-direction: column-reverse;
+            text-align: end;
+        & .right {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .ThirdSection {
+        align-items: unset;
+        & .right {
+            height: 724px;
+            & .description {
+                width: 327px;
+            }
+        }
+    }
 }
 @media (min-width: 1360px) {
     .ThirdSection {
@@ -69,6 +165,8 @@
         width: 1360px;
         height: 880px;
         overflow: hidden;
+        margin: auto;
+
         & .left {
             width: 50%;
             position: relative;
@@ -124,5 +222,9 @@
                 }
             }
         }
+    }
+    .ThirdSection.rtl {
+        flex-direction: row-reverse;
+        text-align: end;
     }
 }

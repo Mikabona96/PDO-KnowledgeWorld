@@ -1,4 +1,5 @@
 import '../../assets/img/arrow-right.png';
+import '../../assets/img/slide-logo.png';
 import '../../assets/img/1st-section-bg1.png';
 import '../../assets/img/1st-section-bg2.png';
 import '../../assets/img/1st-section-bg3.png';
@@ -8,54 +9,137 @@ import '../../assets/img/1st-section-bg5.png';
 export const firstSectionFunction = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const firstSection = document.querySelector('.FirstSection');
-        const wrapper = firstSection?.querySelector('.FirstSection .slider .slides-wrapper');
+        const wrapper = (firstSection?.querySelector('.FirstSection .slider .slides-wrapper')) as HTMLElement;
         const btns = firstSection?.querySelectorAll('.slider-button');
-        const rightArrow = firstSection?.querySelector('.arrow-right');
-        const leftArrow = firstSection?.querySelector('.arrow-left');
-        const figure = (wrapper?.querySelector('.slide figure')) as HTMLElement;
-        const width = figure.offsetWidth;
+        const rightArrow = (firstSection?.querySelector('.arrow-right')) as HTMLElement;
+        const leftArrow = (firstSection?.querySelector('.arrow-left')) as HTMLElement;
+        const slide = (wrapper?.querySelector('.slide')) as HTMLElement;
+        let width = slide.offsetWidth;
         let index = 0;
-        const arrowNavigation = (operator: string) => {
-            if (operator === '+') {
-                index += 1;
-                btns && index >= btns?.length - 1 ? index = btns?.length - 1 : index;
-                wrapper?.setAttribute('style', `transform: translateX(-${index * width}px)`);
-                btns?.forEach((btn, i) => {
-                    index === i ?  btn.classList.add('active') : btn.classList.remove('active');
-                });
-            } else {
-                index -= 1;
-                index < 0 ? index = 0 : index;
-                wrapper?.setAttribute('style', `transform: translateX(-${index * width}px)`);
-                btns?.forEach((btn, i) => {
-                    index === i ?  btn.classList.add('active') : btn.classList.remove('active');
-                });
-            }
-            index > 0 ? leftArrow?.setAttribute('style', 'display: block') : leftArrow?.setAttribute('style', 'display: none');
-            btns && index >= btns?.length - 1 ? rightArrow?.setAttribute('style', 'display: none') : rightArrow?.setAttribute('style', 'display: block');
+        const rtl = !!firstSection?.classList.contains('rtl');
+
+        // ========== Button Navigation
+        const btnsActiveClassHandler = () => {
+            btns?.forEach((btn, i) => {
+                index === i ?  btn.classList.add('active') : btn.classList.remove('active');
+            });
         };
+
+        window.addEventListener('resize', () => {
+            width = slide.offsetWidth;
+            wrapper.style.transform = rtl ? `translateX(${width * index}px)` : `translateX(-${width * index}px)`;
+        });
 
         const slideImages = (idx: number) => {
             index = idx;
-            index > 0 ? leftArrow?.setAttribute('style', 'display: block') : leftArrow?.setAttribute('style', 'display: none');
-            btns && btns?.length - 1 === index ? rightArrow?.setAttribute('style', 'display: none') : rightArrow?.setAttribute('style', 'display: block');
 
-            btns?.forEach((btn, i) => {
-                idx === i ?  btn.classList.add('active') : btn.classList.remove('active');
-            });
-            idx === 0 ? wrapper?.setAttribute('style', 'transform: translateX(0px)') : wrapper?.setAttribute('style', `transform: translateX(-${idx * width}px)`);
+            if (rtl) {
+                index > 0 ? rightArrow.style.display = 'block' : rightArrow.style.display = 'none';
+                btns && btns.length - 1 <= index ? leftArrow.style.display = 'none' : leftArrow.style.display = 'block';
+            } else {
+                index > 0 ? leftArrow.style.display = 'block' : leftArrow.style.display = 'none';
+                btns && btns.length - 1 <= index ? rightArrow.style.display = 'none' : rightArrow.style.display = 'block';
+            }
+
+            btnsActiveClassHandler();
+
+            idx === 0 ? wrapper?.setAttribute('style', 'transform: translateX(0px)') : wrapper?.setAttribute('style', `transform: translateX(${rtl ? '' : '-'}${idx * width}px)`);
         };
 
-        btns?.forEach((btn, idx) => {
-            btn.addEventListener('click', ()=> {
-                slideImages(idx);
+        btns?.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                slideImages(i);
             });
         });
-        rightArrow?.addEventListener('click', () => {
-            arrowNavigation('+');
+
+        //=============== Arrow Navigation ==========
+        if (rtl) {
+            leftArrow.addEventListener('click', () => {
+                if (btns && btns.length - 1 > index) {
+                    index += 1;
+                    slideImages(index);
+                }
+            });
+            rightArrow.addEventListener('click', () => {
+                if (index >= 0) {
+                    index -= 1;
+                    slideImages(index);
+                }
+            });
+        } else {
+            rightArrow.addEventListener('click', () => {
+                if (btns && btns.length - 1 > index) {
+                    index += 1;
+                    slideImages(index);
+                }
+            });
+            leftArrow.addEventListener('click', () => {
+                if (index >= 0) {
+                    index -= 1;
+                    slideImages(index);
+                }
+            });
+        }
+
+        // =========== Swipe Events =============
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        let initialPosition = 0;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        let moving = false;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        let transform = 0;
+        let diff = 0;
+        let currentPosition = 0;
+
+        wrapper?.addEventListener('touchstart', (event: any) => {
+            initialPosition = event.touches[ 0 ].clientX;
+            moving = true;
+            const transformMatrix = window.getComputedStyle(wrapper).getPropertyValue('transform');
+            if (transformMatrix !== 'none') {
+                transform = Number(transformMatrix.split(',')[ 4 ].trim());
+            }
         });
-        leftArrow?.addEventListener('click', () => {
-            arrowNavigation('-');
+        wrapper?.addEventListener('touchmove', (event: any) => {
+            if (moving) {
+                currentPosition = event.touches[ 0 ].clientX;
+                diff = currentPosition - initialPosition;
+
+                wrapper.style.transform = `translateX(${transform + diff}px)`;
+            }
+        });
+        wrapper?.addEventListener('touchend', () => {
+            moving = false;
+            if (rtl) {
+                if (diff > 0) {
+                    index += 1;
+                    if (btns && index >= btns?.length - 1) {
+                        index = btns.length - 1;
+                    }
+                    wrapper.style.transform = `translateX(${width * index}px)`;
+                } else {
+                    index -= 1;
+                    if (index < 0) {
+                        index = 0;
+                    }
+                    wrapper.style.transform = `translateX(${width * index}px)`;
+                }
+                slideImages(index);
+            } else {
+                if (diff < 0) {
+                    index += 1;
+                    if (btns && index >= btns?.length - 1) {
+                        index = btns.length - 1;
+                    }
+                    wrapper.style.transform = `translateX(-${width * index}px)`;
+                } else {
+                    index -= 1;
+                    if (index < 0) {
+                        index = 0;
+                    }
+                    wrapper.style.transform = `translateX(-${width * index}px)`;
+                }
+                slideImages(index);
+            }
         });
     });
 };

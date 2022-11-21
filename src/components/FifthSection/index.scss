@@ -1,65 +1,362 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-.FifthSection {
-    width: $section-width;
-    height: 1254px;
-    padding: 8px 48px 40px;
-    & .column-wrapper {
-        display: flex;
-        flex-direction: column;
-        & .column {
-            display: flex;
-            justify-content: space-between;
+
+@media (max-width: 1359px) {
+    .FifthSection {
+        width: 100%;
+        overflow: hidden;
+        padding: 32px 24px;
+        position: relative;
+        & .column-container {
+            overflow: hidden;
             width: 100%;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #D8D8D8;
-            & .title {
-                width: 327px;
-                height: 70px;
-                left: 48px;
-                top: 3226px;
-                font-family: $lexend;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 28px;
-                line-height: 35px;
-                text-transform: uppercase;
-                color: #000000;
-            }
-            & .info {
+            & .column-wrapper {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
-                & .description {
-                    width: 376px;
-                    font-family: $inter;
+                transition: .3s ease;
+                & .column {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-right: 0px;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-left: 0px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #D8D8D8;
+                    & .title {
+                        width: 327px;
+                        font-family: $lexend;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 25px;
+                        text-transform: uppercase;
+                        color: #000000;
+                    }
+                    & .info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 24px;
+                        width: 324px;
+                        & .description {
+                            min-width: 285px;
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 28px;
+                            color: #000000;
+                        }
+                        & .link {
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 28px;
+                            color: #019748;
+                            text-decoration: none;
+                        }
+                    }
+                    & img {
+                        margin-top: 24px;
+                        width: 327px;
+                        height: 225px;
+                        align-self: center;
+                    }
+        
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        & .buttons {
+            display: none;
+        }
+    }
+    .FifthSection.rtl {
+        direction: rtl;
+        & .column-container {
+            & .column-wrapper {
+                & .column {
+                    & .info {
+                        direction: ltr;
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .FifthSection {
+        width: 100%;
+        height: 666px;
+        overflow: hidden;
+        padding: 32px 24px;
+        position: relative;
+        & .column-container {
+            overflow: hidden;
+            width: 100%;
+            & .column-wrapper {
+                width: 300%;
+                display: flex;
+                flex-direction: row;
+                transition: .3s ease;
+                & .column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-right: 24px;
+                    width: 100%;
+                    padding-left: 24px;
+                    padding-bottom: 0px;
+                    border: 0;
+                    & .title {
+                        width: 327px;
+                        font-family: $lexend;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 25px;
+                        text-transform: uppercase;
+                        color: #000000;
+                    }
+                    & .info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 24px;
+                        width: 324px;
+                        & .description {
+                            min-width: 285px;
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 28px;
+                            color: #000000;
+                        }
+                        & .link {
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 28px;
+                            color: #019748;
+                            text-decoration: none;
+                        }
+                    }
+                    & img {
+                        margin-top: 24px;
+                        width: 327px;
+                        height: 225px;
+                        align-self: center;
+                    }
+        
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        & .buttons {
+            position: absolute;
+            top: 630px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            & .button {
+                width: 16px;
+                height: 4px;
+                background: rgba(237, 207, 101, 0.5);
+                border-radius: 5px;
+                margin-right: 8px;
+                transition: .3s ease;
+            }
+            & .button.active {
+                width: 40px;
+                height: 4px;
+                background: #EDCF65;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .FifthSection {
+        width: 100%;
+        height: 666px;
+        overflow: hidden;
+        padding: 32px 24px;
+        position: relative;
+        & .column-wrapper {
+            display: flex;
+            transition: .3s ease;
+            & .column {
+                display: flex;
+                flex-direction: column;
+                margin-right: 24px;
+                width: 100%;
+                padding-left: 0px !important;
+                & .title {
+                    width: 327px;
+                    font-family: $lexend;
                     font-style: normal;
-                    font-weight: 400;
+                    font-weight: 500;
                     font-size: 20px;
-                    line-height: 28px;
+                    line-height: 25px;
+                    text-transform: uppercase;
                     color: #000000;
                 }
-                & .link {
+                & .info {
+                    display: flex;
+                    flex-direction: column;
                     margin-top: 24px;
-                    text-decoration: none;
-                    width: 376px;
-                    height: 28px;
-                    font-family: $inter;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: $green;
+                    width: 324px;
+                    & .description {
+                        min-width: 285px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                    & .link {
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #019748;
+                        text-decoration: none;
+                    }
+                }
+                & img {
+                    margin-top: 24px;
+                    width: 327px;
+                    height: 225px;
+                }
     
+                &:last-child {
+                    border-bottom: none;
                 }
             }
-            & img {
-    
+        }
+        & .buttons {
+            position: absolute;
+            top: 630px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            & .button {
+                width: 16px;
+                height: 4px;
+                background: rgba(237, 207, 101, 0.5);
+                border-radius: 5px;
+                margin-right: 8px;
+                transition: .3s ease;
             }
+            & .button.active {
+                width: 40px;
+                height: 4px;
+                background: #EDCF65;
+                border-radius: 5px;
+            }
+        }
+    }
+    .FifthSection.rtl {
+        & .column-container {
+            & .column-wrapper {
+                & .column {
+                    margin-right: 0 !important;
+                    margin-left: 24px !important;
+                }
+            }
+        }
+    }
+}
 
-            &:last-child {
-                border-bottom: none;
+@media (min-width: 1360px) {
+    .FifthSection {
+        width: $section-width;
+        height: 1254px;
+        margin: auto;
+        padding: 8px 48px 40px;
+        & .column-wrapper {
+            display: flex;
+            flex-direction: column;
+            & .column {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                border-bottom: 1px solid #D8D8D8;
+                & .title {
+                    width: 327px;
+                    height: 70px;
+                    left: 48px;
+                    top: 3226px;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 28px;
+                    line-height: 35px;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+                & .info {
+                    display: flex;
+                    flex-direction: column;
+                    & .description {
+                        width: 376px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                    & .link {
+                        margin-top: 24px;
+                        text-decoration: none;
+                        width: 376px;
+                        height: 28px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: $green;
+        
+                    }
+                }
+                & img {
+        
+                }
+    
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .FifthSection.rtl {
+        direction: rtl;
+        & .column-container {
+            & .column-wrapper {
+                & .column {
+                    & .info {
+                        direction: ltr;
+                        text-align: end;
+                    }
+                }
             }
         }
     }

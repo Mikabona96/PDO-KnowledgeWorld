@@ -1,35 +1,92 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-.FourthSection {
-    width: $section-width;
-    height: 538px;
-    background: url(http://localhost:3000/assets/images/4th-section-bg.png);
-    position: relative;
-    & .title {
-        position: absolute;
-        width: 363px;
-        height: 28px;
-        left: 850px;
-        top: 434px;
-        font-family: $inter;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
-        color: #FFFFFF;
+@media (min-width: 375px) {
+    .FourthSection {
+        height: 538px;
+        background: url(http://localhost:3000/assets/images/4th-section-bg.png);
+        position: relative;
+        background-position: 50%;
+        & .title {
+            position: absolute;
+            width: 326px;
+            height: 125px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 323px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 28px;
+            color: #FFFFFF;
+        }
+        & .description {
+            position: absolute;
+            width: 326px;
+            height: 125px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 166px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+            color: #FFFFFF;
+        }
     }
-    & .description {
-        position: absolute;
-        width: 1060px;
-        height: 120px;
-        left: 177px;
-        top: 209px;
-        font-family: $lexend;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 40px;
-        color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .FourthSection {
+        & .description {
+            width: 526px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .FourthSection {
+        & .description {
+            width: 626px;
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .FourthSection {
+        width: $section-width;
+        height: 538px;
+        background: url(http://localhost:3000/assets/images/4th-section-bg.png);
+        position: relative;
+        margin: auto;
+        & .title {
+            position: absolute;
+            width: 363px;
+            height: 28px;
+            left: 850px;
+            top: 434px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #FFFFFF;
+        }
+        & .description {
+            position: absolute;
+            width: 1060px;
+            height: 120px;
+            left: 177px;
+            transform: translateX(0%);
+            top: 209px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 40px;
+            color: #FFFFFF;
+        }
     }
 }

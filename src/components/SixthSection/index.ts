@@ -20,6 +20,22 @@ export const sixthSectionFunction = () => {
             center:                   'Ecoman Center',
             date:                     '',
             timeSlot:                 '',
+            toInitial:                function () {
+                this.bookingType = 'Individual/Family';
+                this.name = '';
+                this.secondName = '';
+                this.code = '+1';
+                this.number = '';
+                this.sendReminders = false;
+                this.email = '';
+                this.knowledgeWorldNewsLetter = false;
+                this.adultVisitors = 0;
+                this.childVisitors = 0;
+                this.country = '';
+                this.center = 'Ecoman Center';
+                this.date = '';
+                this.timeSlot = '';
+            },
         };
 
         const viewAllBtn = document.querySelector('.view-all');
@@ -274,24 +290,29 @@ export const sixthSectionFunction = () => {
             });
         });
 
-        prevBtns.forEach((btn) => {
+        prevBtns.forEach((btn, i) => {
             btn.addEventListener('click', () => {
                 index -= 1;
+
                 if (index <= 2) {
                     ProgressBar.style.display = 'flex';
                 }
                 removeActiveStep();
                 steps[ index ].classList.add('active');
                 removeCircleActiveClass(index);
+                if (i === 0) {
+                    circleGreen[ 0 ].classList.add('active');
+                }
                 CurrentProgress.style.width = `${index * 50}%`;
             });
         });
         // ============================= Open Stepper =============================
         const sixthSection = document.querySelector('.SixthSection');
-        const makeBookingBtn = document.querySelector('.top .make-booking');
+        const makeBookingBtn = document.querySelector('.top-head .make-booking');
         const makeBookingStepper = (document.querySelector('.makebooking-stepper')) as HTMLElement;
         const makeBookingStepperClose = (document.querySelector('.makebooking-stepper .close')) as HTMLElement;
         const rtl = !!sixthSection?.classList.contains('rtl');
+        const forms = document.querySelectorAll('form');
 
         makeBookingBtn?.addEventListener('click', () => {
             ProgressBar.style.display = 'flex';
@@ -301,6 +322,27 @@ export const sixthSectionFunction = () => {
             steps[ index ].classList.add('active');
         });
 
+        const restFormToInitial = () => {
+            dataStore.toInitial();
+            forms.forEach((form) => {
+                form.reset();
+            });
+            selectedBookingType.innerHTML = 'Individual/Family';
+            BookingType!.innerHTML = 'Individual/Family';
+            Name!.innerHTML = '';
+            Phone!.innerHTML = '';
+            Email!.innerHTML = '';
+            selectedCode.innerHTML = `<span>+${1}</span>`;
+            selectedCountry.innerHTML = 'Country';
+            selectedCenter.innerHTML = 'Ecoman Center';
+            selectedTime.innerHTML = '08:00 - 09:00';
+            AdultsCount!.innerHTML = '';
+            ChildsCount!.innerHTML = '';
+            Country!.innerHTML = '';
+            centerTitle.innerHTML = 'Ecoman Center';
+            centerDate.innerHTML = '';
+        };
+
         makeBookingStepperClose.addEventListener('click', () => {
             rtl ? makeBookingStepper.style.left = '-200%' : makeBookingStepper.style.right = '-200%';
             index = 0;
@@ -309,6 +351,7 @@ export const sixthSectionFunction = () => {
             removeCircleActiveClass();
             circleGreen[ index ].classList.toggle('active');
             CurrentProgress.style.width = `${index * 50}%`;
+            restFormToInitial();
         });
 
         // ===================== Find booking ==========================

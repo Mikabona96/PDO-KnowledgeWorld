@@ -10,18 +10,54 @@
         align-items: center;
         position: relative;
         overflow: hidden;
+        & .top-head {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            & .title {
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 24px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+            & .buttons {
+                & .button {
+                    width: 161px;
+                    height: 39px;
+                    background: #019748;
+                    border: 1px solid #019748;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                }
+                & .view-booking {
+                    background-color: #fff;
+                    color: #019748;
+                }
+            }
+        }
         & .makebooking-stepper {
             position: absolute;
             top: 0px;
-            right: -200%;
-            width: 60%;
-            height: 835px;
+            right: -100%;
+            width: 640px;
+            height: 935px;
             padding: 16px 24px 24px;
             overflow: hidden;
             background: #fff;
             transition: .3s ease;
             z-index: 20;
             & .top {
+                display: flex;
+                justify-content: space-between;
                 & .title {
                     margin-left: 48px;
                     width: 473px;
@@ -39,9 +75,6 @@
                     width: 28px;
                     height: 28px;
                     cursor: pointer;
-                    position: absolute;
-                    top: 0;
-                    right: 42px;
                     & div {
                         position: relative;
                         height: 28px;
@@ -105,7 +138,6 @@
                     background: #E6F5ED;
                     position: relative;
                     border-radius: 50%;
-                    transition: .3s ease;
                     & .circle-white {
                         width: 9px;
                         height: 9px;
@@ -122,94 +154,79 @@
                 }
             }
             & .steps-container {
-                display: flex;
-                width: 100%;
-                // transition: .5s ease;
                 & .step {
-                    flex-shrink: 0;
                     display: none;
-                    width: 100%;
-                    margin-top: 32px;
-                    height: 829px;
-                    position: relative;
-                    margin-right: 24px;
+                    height: 832px;
                     & .step-title {
+                        margin-top: 24px;
                         display: flex;
-                        & .step-title.green {
-                            margin-left: 48px;
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 20px;
-                            text-transform: uppercase;
-                            color: #fff;
-                            margin: 0px;
-                            padding: 10px 15px;
+                        & .green {
+                            padding: 8px 10px 8px 15px;
+                            width: 40px;
+                            height: 40px;
                             background: #019748;
-                        }
-                        & .step-title.grey {
-                            margin-left: 48px;
                             font-family: $lexend;
-                            width: 100%;
                             font-style: normal;
                             font-weight: 400;
                             font-size: 20px;
-                            line-height: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            text-transform: uppercase;
+                            color: #FFFFFF;
+                            margin-top: 0;
+                        }
+                        & .grey {
+                            padding: 10px;
+                            width: 548px;
+                            height: 40px;
+                            background: #F8F7FA;
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
                             text-transform: uppercase;
                             color: #000000;
-                            margin: 0px;
-                            padding: 10px 15px;
-                            background: rgb(248,247,250);
+                            margin-top: 0;
                         }
                     }
                     & .content {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        & .left {
+                        & form {
+                            margin-top: 37px;
                             display: flex;
                             flex-direction: column;
-                            & .info {
-                                margin-top: 37px;
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 20px;
-                                line-height: 25px;
+                            & .top {
                                 display: flex;
-                                align-items: flex-end;
-                                color: #019748;
-                                &:nth-child(2) {
-                                    margin-top: 55px;
+                                flex-direction: row;
+                                height: 40px;
+                                justify-content: space-between;
+                                position: unset;
+                                & .left {
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        /* identical to box height */
+
+                                        display: flex;
+                                        align-items: flex-end;
+
+                                        /* green main */
+
+                                        color: #019748;
+                                    }
                                 }
-                                &:last-child {
-                                    margin-top: 244px;
-                                }
-                            }
-                            & .info-description {
-                                margin-top: 12px;
-                                width: 147px;
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                display: flex;
-                                align-items: center;
-        
-                                color: #4F4F4F;
-                            }
-                        }
-                        & .right {
-                            & form {
-                                display: flex;
-                                flex-direction: column;
-                                width: 327px;
-                                & .select-wrapper {
+                                & .right {
+                                    width: 327px;
+                                    margin-right: 0;
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 37px;
                                         width: 327px;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
@@ -226,7 +243,7 @@
                                                 width: 100%;
                                                 opacity: 0;
                                                 // transition: 0.2s ease;
-                                                // border-radius: 5px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
                                                 order: 1;
                                                 font-size: 14px;
@@ -298,46 +315,40 @@
                                             }
                                         }
                                     }
+                                    }
                                 }
-                                & .select-wrapper-adult-visitors {
-                                    margin-top: 43px;
+                            }
+                            & .middle {
+                                margin-top: 40px;
+                                display: flex;
+                                justify-content: space-between;
+                                & .left {
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #019748;
+                                    }
+                                    & .info-description {
+                                        width: 149px;
+                                        font-family: $inter;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #4F4F4F;
+                                    }
                                 }
-                                & .select-wrapper-child-visitors {
-                                    margin-top: 12px;
-                                }
-                                & .select-wrapper-country {
-                                    margin-top: 24px;
-                                }
-                                & .name {
-                                    margin-top: 40px;
+                                & .right {
                                     width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .second-name {
-                                    margin-top: 12px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .code-number {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    margin-top: 24px;
-                                    width: 327px;
-                                    height: 40px;
-                                    & .number {
-                                        width: 192px;
+                                    & .name {
+                                        width: 327px;
                                         height: 40px;
                                         background: rgb(228, 228, 228);
                                         border: 0px;
@@ -346,17 +357,248 @@
                                         line-height: 19px;
                                         font-family: $lexend;
                                     }
-                                    & .select-wrapper-code {
+                                    & .second-name {
+                                        margin-top: 12px;
+                                        width: 327px;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                    & .code-number {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 24px;
+                                        height: 40px;
+                                        & .number {
+                                            width: 192px;
+                                            height: 40px;
+                                            background: rgb(228, 228, 228);
+                                            border: 0px;
+                                            padding: 8px 12px;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            font-family: $lexend;
+                                        }
+                                        & .select-wrapper-code {
+                                            display: block;
+                                            position: relative;
+                                            margin-top: 0px;
+                                            width: 125px;
+                                            height: 40px;
+                                            // border: 1px solid #F1F1F1;
+                                            // padding: 3px 10px 3px 6px;
+                                            & .select-box {
+                                                display: flex;
+                                                width: 55px;
+                                                height: 40px;
+                                                flex-direction: column;
+                                                & .options-container {
+                                                    color: #000;
+                                                    background: white;
+                                                    max-height: 0;
+                                                    width: 100%;
+                                                    opacity: 0;
+                                                    // transition: 0.2s ease;
+                                                    // border-radius: 5px;
+                                                    overflow: hidden;
+                                                    order: 1;
+                                                    font-size: 14px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    height: 96px;
+                                                    & .option {
+                                                        padding: 8px 12px;
+                                                        cursor: pointer;
+                                                        & label {
+                                                            cursor: pointer;
+                                                        }
+                                                        & .radio {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                                & .options-container.active {
+                                                    max-height: 240px;
+                                                    opacity: 1;
+                                                    height: 100px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    overflow-y: scroll;
+                                                    & + .selected::before {
+                                                        transform: rotate(220deg);
+                                                    }
+                                                    & + .selected::after {
+                                                        transform: rotate(140deg);
+                                                    }
+                                                }
+                                                & .selected {
+                                                    width: 125px;
+                                                    height: 40px;
+                                                    color: #000;
+                                                    position: relative;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    order: 0;
+                                                    font-family: $inter;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    font-size: 16px;
+                                                    padding: 8px 12px;
+                                                    cursor: pointer;
+                                                    background: rgb(228, 228, 228);
+                                                    &::before {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 14px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(140deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 10px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(220deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    & .checkbox-wrapper {
+                                        margin-top: 15px;
+                                        /* Customize the label (the container) */
+                                        & .container {
+                                            display: block;
+                                            position: relative;
+                                            padding-left: 35px;
+                                            margin-bottom: 12px;
+                                            cursor: pointer;
+                                            font-size: 18px;
+                                            -webkit-user-select: none;
+                                            -moz-user-select: none;
+                                            -ms-user-select: none;
+                                            user-select: none;
+                                            font-family: $inter;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            /* identical to box height */
+            
+                                            display: flex;
+                                            align-items: flex-end;
+            
+                                            color: #000000;
+                                        }
+                                        
+                                        /* Hide the browser's default checkbox */
+                                        & .container input {
+                                            position: absolute;
+                                            opacity: 0;
+                                            cursor: pointer;
+                                            height: 0;
+                                            width: 0;
+                                        }
+                                        
+                                        /* Create a custom checkbox */
+                                        & .checkmark {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            height: 18px;
+                                            width: 18px;
+                                            background-color: #eee;
+                                        }
+                                        
+                                        /* On mouse-over, add a grey background color */
+                                        & .container:hover input ~ .checkmark {
+                                            background-color: #ccc;
+                                        }
+                                        
+                                        /* When the checkbox is checked, add a blue background */
+                                        & .container input:checked ~ .checkmark {
+                                            background-color: #019748;
+                                        }
+                                        
+                                        /* Create the checkmark/indicator (hidden when not checked) */
+                                        & .checkmark:after {
+                                            content: "";
+                                            position: absolute;
+                                            display: none;
+                                        }
+                                        
+                                        /* Show the checkmark when checked */
+                                        & .container input:checked ~ .checkmark:after {
+                                            display: block;
+                                        }
+                                        
+                                        /* Style the checkmark/indicator */
+                                        & .container .checkmark:after {
+                                            left: 5px;
+                                            top: 1px;
+                                            width: 5px;
+                                            height: 10px;
+                                            border: solid white;
+                                            border-width: 0 2px 2px 0;
+                                            -webkit-transform: rotate(35deg);
+                                            -ms-transform: rotate(35deg);
+                                            transform: rotate(35deg);
+                                        }
+                                    }
+                                    & .email {
+                                        margin-top: 10px;
+                                        width: 327px;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                }
+
+                            }
+                            & .bottom {
+                                margin-top: 44px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: baseline;
+                                & .left {
+                                    font-family: $lexend;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 20px;
+                                    line-height: 25px;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #019748;
+                                }
+                                & .right {
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 0px;
-                                        width: 125px;
+                                        width: 327px;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
                                         // padding: 3px 10px 3px 6px;
                                         & .select-box {
                                             display: flex;
-                                            width: 55px;
+                                            width: 327px;
                                             height: 40px;
                                             flex-direction: column;
                                             & .options-container {
@@ -366,7 +608,7 @@
                                                 width: 100%;
                                                 opacity: 0;
                                                 // transition: 0.2s ease;
-                                                // border-radius: 5px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
                                                 order: 1;
                                                 font-size: 14px;
@@ -401,17 +643,16 @@
                                                 }
                                             }
                                             & .selected {
-                                                width: 125px;
+                                                width: 327px;
                                                 height: 40px;
                                                 color: #000;
                                                 position: relative;
                                                 display: flex;
                                                 align-items: center;
                                                 order: 0;
-                                                font-family: $inter;
-                                                font-style: normal;
-                                                font-weight: 400;
                                                 font-size: 16px;
+                                                line-height: 19px;
+                                                font-family: $lexend;
                                                 padding: 8px 12px;
                                                 cursor: pointer;
                                                 background: rgb(228, 228, 228);
@@ -439,178 +680,114 @@
                                                 }
                                             }
                                         }
-                                    }
-                                }
-                                & .checkbox-wrapper {
-                                    margin-top: 15px;
-                                    /* Customize the label (the container) */
-                                    & .container {
-                                        display: block;
-                                        position: relative;
-                                        padding-left: 35px;
-                                        margin-bottom: 12px;
-                                        cursor: pointer;
-                                        font-size: 18px;
-                                        -webkit-user-select: none;
-                                        -moz-user-select: none;
-                                        -ms-user-select: none;
-                                        user-select: none;
-                                        font-family: $inter;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 17px;
-                                        /* identical to box height */
-        
-                                        display: flex;
-                                        align-items: flex-end;
-        
-                                        color: #000000;
-                                    }
-                                    
-                                    /* Hide the browser's default checkbox */
-                                    & .container input {
-                                        position: absolute;
-                                        opacity: 0;
-                                        cursor: pointer;
-                                        height: 0;
-                                        width: 0;
-                                    }
-                                    
-                                    /* Create a custom checkbox */
-                                    & .checkmark {
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        height: 18px;
-                                        width: 18px;
-                                        background-color: #eee;
-                                    }
-                                    
-                                    /* On mouse-over, add a grey background color */
-                                    & .container:hover input ~ .checkmark {
-                                        background-color: #ccc;
-                                    }
-                                    
-                                    /* When the checkbox is checked, add a blue background */
-                                    & .container input:checked ~ .checkmark {
-                                        background-color: #019748;
-                                    }
-                                    
-                                    /* Create the checkmark/indicator (hidden when not checked) */
-                                    & .checkmark:after {
-                                        content: "";
-                                        position: absolute;
-                                        display: none;
-                                    }
-                                    
-                                    /* Show the checkmark when checked */
-                                    & .container input:checked ~ .checkmark:after {
-                                        display: block;
-                                    }
-                                    
-                                    /* Style the checkmark/indicator */
-                                    & .container .checkmark:after {
-                                        left: 5px;
-                                        top: 1px;
-                                        width: 5px;
-                                        height: 10px;
-                                        border: solid white;
-                                        border-width: 0 2px 2px 0;
-                                        -webkit-transform: rotate(35deg);
-                                        -ms-transform: rotate(35deg);
-                                        transform: rotate(35deg);
-                                    }
-                                }
-                                & .email {
-                                    margin-top: 10px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                            }
-                        }
-                    }
-                    & .btn {
-                        position: absolute;
-                        bottom: 114px;
-                        right: 0px;
-                        width: 159px;
-                        height: 48px;
-                        padding: 0 24px;
-                        border: none;
-                        background: #019748;
-                        color: #fff;
-                        font-family: $readex;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 24px;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                    }
-                    & .btn.prev-step {
-                        width: 160px;
-                        right: 172px;
-                        background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
-                    }
-                }
-                & .step.active {
-                    display: block;
-                }
-                & .step2 {
-                    & .content {
-                        & .left {
-                            & .info {
-                                &:last-child {
-                                    margin-top: 56px;
-                                }
-                            }
-                        }
-                        & .right {
-                            & form {
-                                & .date-wrapper {
-                                    & .date {
-                                        margin-top: 40px;
-                                        height: 40px;
-                                        width: 100%;
-                                        padding: 0px 5px 0px 12px;
-                                        font-family: $inter;
-                                        background: rgb(228, 228, 228);
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        outline: none;
-                                        border: none;
-                                        color: #000000;
-                                        &::-webkit-calendar-picker-indicator { 
-                                            opacity: 1;
+                                        &:nth-child(2) {
+                                            margin-top: 12px;
+                                        }
+                                        &:nth-child(3) {
+                                            margin-top: 24px;
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    & .btn.prev-step {
+                    & .next-step {
+                        padding: 0px 24px;
+                        position: absolute;
                         width: 160px;
-                        right: 172px;
+                        height: 48px;
+                        left: 460px;
+                        top: 785px;
+                        background: #019748;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #FFFFFF;
+                        border: 0;
+                    }
+                    & .prev-step {
+                        padding: 0px 24px;
+                        position: absolute;
+                        width: 160px;
+                        height: 48px;
+                        left: 284px;
+                        top: 785px;
                         background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #019748;
+                        border: 1px solid #019748;;
+                    }
+                }
+                & .step.active {
+                    display: block;
+                }
+                & .step2 {
+                    & .top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                    }
+                    & .middle {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                        & .right {
+                            & .date-wrapper {
+                                & .date {
+                                    margin-top: 40px;
+                                    height: 40px;
+                                    width: 100%;
+                                    padding: 0px 5px 0px 12px;
+                                    font-family: $inter;
+                                    background: rgb(228, 228, 228);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    outline: none;
+                                    border: none;
+                                    color: #000000;
+                                    &::-webkit-calendar-picker-indicator { 
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 & .step3 {
                     & .content {
+                        display: flex;
+                        justify-content: space-between;
                         & .left {
                             & .top {
+                                width: 385px;
                                 margin-top: 32px;
                                 background: #F8F7FA;
                                 padding: 24px;
@@ -636,15 +813,15 @@
                                 }
                             }
                             & .bottom {
-                                z-index: 1;
                                 margin-top: 12px;
                                 width: 385px;
-                                height: 531px;
-                                padding: 24px;
+                                height: 462px;
+                                padding: 16px 24px 0;
+                                background: #F8F7FA;
                                 & .wrapper {
                                     padding-bottom: 12px;
                                     border-bottom: 1px solid #4F4F4F;
-                                    margin-bottom: 12px;
+                                    margin-bottom: 3px;
                                     & label {
                                         font-family: $lexend;
                                         font-style: normal;
@@ -670,7 +847,6 @@
                             }
                         }
                         & .right {
-                            z-index: 1;
                             width: 181px;
                             margin-top: 32px;
                             & .title {
@@ -721,9 +897,9 @@
                     display: none;
                     & .title {
                         height: 40px;
-                        min-width: 435px;           
+                        min-width: 437px;                
                         position: absolute;
-                        top: 250px;
+                        top: 270px;
                         left: 50%;
                         transform: translateX(-50%);
                         font-family: $lexend;
@@ -738,9 +914,9 @@
                     }
                     & .description {
                         position: absolute;
-                        top: 335px;
+                        top: 325px;
                         left: 50%;
-                        min-width: 335px;
+                        min-width: 435px;
                         transform: translateX(-50%);
                         height: 34px;
                         font-family: $inter;
@@ -761,7 +937,7 @@
                         justify-content: space-between;
                         padding: 24px;
                         transform: translateX(-50%);
-                        width: 100%;
+                        width: 385px;
                         height: 100px;
                         background: #F8F7FA;
                         & .place {
@@ -885,6 +1061,7 @@
                 }
                 & .findBooking {
                     display: flex;
+                    flex-direction: column;
                     width: 100%;
                     align-items: center;
                     justify-content: space-between;
@@ -895,13 +1072,13 @@
                         font-weight: 400;
                         font-size: 20px;
                         line-height: 25px;
-                        display: none;
                         align-items: flex-end;
                         color: #019748;
                     }
                     & input {
+                        width: 100%;
+                        margin-top: 24px;
                         padding: 0px 12px;
-                        width: 327px;
                         height: 40px;
                         background: #F8F7FA;
                         font-family: 'Inter';
@@ -1083,67 +1260,6 @@
             & .step.active {
                 display: block;
             }
-        }
-        & .top {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 0;
-            & .title {
-                font-family: $lexend;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                margin-left: 24px;
-                line-height: 28px;
-                text-transform: uppercase;
-                color: #000000;
-            }
-            & .buttons {
-                margin-left: 24px;
-                margin-bottom: 86px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 337px;
-                & .button {
-                    z-index: 2;
-                    width: 327px;
-                    height: 50px;
-                    border: 1px solid $green;
-                    cursor: pointer;
-                    a {
-                        text-decoration: none;
-                    }
-                    &:last-child {
-                        margin-top: 24px;
-                    }
-                }
-                & .button.make-booking {
-                    background: #019748;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: #FFFFFF;
-                }
-                & .button.view-booking {
-                    background: #fff;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: $green;
-                }
-            }
-    
         }
         & .card-wrapper {
             margin-top: 54px;
@@ -1434,19 +1550,57 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        overflow: hidden;
+        overflow: unset !important;
+        overflow-x: hidden;
+        overflow-y: auto;
+        & .top-head {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            & .title {
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 24px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+            & .buttons {
+                & .button {
+                    width: 161px;
+                    height: 39px;
+                    background: #019748;
+                    border: 1px solid #019748;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                }
+                & .view-booking {
+                    background-color: #fff;
+                    color: #019748;
+                }
+            }
+        }
         & .makebooking-stepper {
             position: absolute;
             top: 0px;
-            right: -200%;
+            right: -100%;
             width: 100%;
-            height: 835px;
+            min-height: 1111px;
             padding: 16px 24px 24px;
             overflow: hidden;
             background: #fff;
             transition: .3s ease;
             z-index: 20;
             & .top {
+                display: flex;
+                justify-content: space-between;
                 & .title {
                     margin-left: 48px;
                     width: 473px;
@@ -1464,9 +1618,6 @@
                     width: 28px;
                     height: 28px;
                     cursor: pointer;
-                    position: absolute;
-                    top: 0;
-                    right: 42px;
                     & div {
                         position: relative;
                         height: 28px;
@@ -1530,7 +1681,6 @@
                     background: #E6F5ED;
                     position: relative;
                     border-radius: 50%;
-                    transition: .3s ease;
                     & .circle-white {
                         width: 9px;
                         height: 9px;
@@ -1547,101 +1697,88 @@
                 }
             }
             & .steps-container {
-                display: flex;
-                width: 100%;
-                // transition: .5s ease;
                 & .step {
-                    flex-shrink: 0;
                     display: none;
-                    width: 100%;
-                    margin-top: 32px;
-                    height: 829px;
-                    position: relative;
-                    margin-right: 24px;
+                    height: 1057px;
                     & .step-title {
+                        margin-top: 24px;
                         display: flex;
-                        & .step-title.green {
-                            margin-left: 48px;
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 20px;
-                            text-transform: uppercase;
-                            color: #fff;
-                            margin: 0px;
-                            padding: 10px 15px;
+                        & .green {
+                            padding: 8px 10px 8px 15px;
+                            width: 40px;
+                            height: 40px;
                             background: #019748;
-                        }
-                        & .step-title.grey {
-                            margin-left: 48px;
                             font-family: $lexend;
-                            width: 100%;
                             font-style: normal;
                             font-weight: 400;
                             font-size: 20px;
-                            line-height: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            text-transform: uppercase;
+                            color: #FFFFFF;
+                            margin-top: 0;
+                        }
+                        & .grey {
+                            padding: 10px;
+                            width: 100%;
+                            height: 40px;
+                            background: #F8F7FA;
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 17px;
+                            line-height: 17px;
+                            display: flex;
+                            align-items: flex-end;
                             text-transform: uppercase;
                             color: #000000;
-                            margin: 0px;
-                            padding: 10px 15px;
-                            background: rgb(248,247,250);
+                            margin-top: 0;
                         }
                     }
                     & .content {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        & .left {
+                        & form {
+                            margin-top: 37px;
                             display: flex;
                             flex-direction: column;
-                            & .info {
-                                margin-top: 37px;
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 20px;
-                                line-height: 25px;
-                                display: flex;
-                                align-items: flex-end;
-                                color: #019748;
-                                &:nth-child(2) {
-                                    margin-top: 55px;
-                                }
-                                &:last-child {
-                                    margin-top: 244px;
-                                }
-                            }
-                            & .info-description {
-                                margin-top: 12px;
-                                width: 147px;
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                display: flex;
-                                align-items: center;
-        
-                                color: #4F4F4F;
-                            }
-                        }
-                        & .right {
-                            & form {
+                            & .top {
                                 display: flex;
                                 flex-direction: column;
-                                width: 327px;
-                                & .select-wrapper {
+                                height: 40px;
+                                justify-content: space-between;
+                                align-items: center;
+                                position: unset;
+                                & .left {
+                                    margin-bottom: 12px;
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        /* identical to box height */
+
+                                        display: flex;
+                                        align-items: flex-end;
+
+                                        /* green main */
+
+                                        color: #019748;
+                                    }
+                                }
+                                & .right {
+                                    width: 100%;
+                                    margin-right: 0;
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 37px;
-                                        width: 327px;
+                                        width: 100%;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
                                         // padding: 3px 10px 3px 6px;
                                         & .select-box {
                                             display: flex;
-                                            width: 327px;
+                                            width: 100%;
                                             height: 40px;
                                             flex-direction: column;
                                             & .options-container {
@@ -1651,7 +1788,7 @@
                                                 width: 100%;
                                                 opacity: 0;
                                                 // transition: 0.2s ease;
-                                                // border-radius: 5px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
                                                 order: 1;
                                                 font-size: 14px;
@@ -1686,7 +1823,7 @@
                                                 }
                                             }
                                             & .selected {
-                                                width: 327px;
+                                                width: 100%;
                                                 height: 40px;
                                                 color: #000;
                                                 position: relative;
@@ -1723,46 +1860,43 @@
                                             }
                                         }
                                     }
+                                    }
                                 }
-                                & .select-wrapper-adult-visitors {
-                                    margin-top: 43px;
+                            }
+                            & .middle {
+                                margin-top: 60px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-between;
+                                & .left {
+                                    margin-bottom: 24px;
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #019748;
+                                    }
+                                    & .info-description {
+                                        width: 149px;
+                                        font-family: $inter;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #4F4F4F;
+                                    }
                                 }
-                                & .select-wrapper-child-visitors {
-                                    margin-top: 12px;
-                                }
-                                & .select-wrapper-country {
-                                    margin-top: 24px;
-                                }
-                                & .name {
-                                    margin-top: 40px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .second-name {
-                                    margin-top: 12px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .code-number {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    margin-top: 24px;
-                                    width: 327px;
-                                    height: 40px;
-                                    & .number {
-                                        width: 192px;
+                                & .right {
+                                    width: 100%;
+                                    & .name {
+                                        width: 100%;
                                         height: 40px;
                                         background: rgb(228, 228, 228);
                                         border: 0px;
@@ -1771,17 +1905,252 @@
                                         line-height: 19px;
                                         font-family: $lexend;
                                     }
-                                    & .select-wrapper-code {
+                                    & .second-name {
+                                        margin-top: 12px;
+                                        width: 100%;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                    & .code-number {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 24px;
+                                        height: 40px;
+                                        & .number {
+                                            width: 59%;
+                                            height: 40px;
+                                            background: rgb(228, 228, 228);
+                                            border: 0px;
+                                            padding: 8px 12px;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            font-family: $lexend;
+                                        }
+                                        & .select-wrapper-code {
+                                            display: block;
+                                            position: relative;
+                                            margin-top: 0px;
+                                            width: 125px;
+                                            height: 40px;
+                                            // border: 1px solid #F1F1F1;
+                                            // padding: 3px 10px 3px 6px;
+                                            & .select-box {
+                                                display: flex;
+                                                width: 55px;
+                                                height: 40px;
+                                                flex-direction: column;
+                                                & .options-container {
+                                                    color: #000;
+                                                    background: white;
+                                                    max-height: 0;
+                                                    width: 100%;
+                                                    opacity: 0;
+                                                    // transition: 0.2s ease;
+                                                    // border-radius: 5px;
+                                                    overflow: hidden;
+                                                    order: 1;
+                                                    font-size: 14px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    height: 96px;
+                                                    & .option {
+                                                        padding: 8px 12px;
+                                                        cursor: pointer;
+                                                        & label {
+                                                            cursor: pointer;
+                                                        }
+                                                        & .radio {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                                & .options-container.active {
+                                                    max-height: 240px;
+                                                    opacity: 1;
+                                                    height: 100px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    overflow-y: scroll;
+                                                    & + .selected::before {
+                                                        transform: rotate(220deg);
+                                                    }
+                                                    & + .selected::after {
+                                                        transform: rotate(140deg);
+                                                    }
+                                                }
+                                                & .selected {
+                                                    width: 125px;
+                                                    height: 40px;
+                                                    color: #000;
+                                                    position: relative;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    order: 0;
+                                                    font-family: $inter;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    font-size: 16px;
+                                                    padding: 8px 12px;
+                                                    cursor: pointer;
+                                                    background: rgb(228, 228, 228);
+                                                    &::before {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 14px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(140deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 10px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(220deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    & .checkbox-wrapper {
+                                        margin-top: 15px;
+                                        /* Customize the label (the container) */
+                                        & .container {
+                                            display: block;
+                                            position: relative;
+                                            padding-left: 35px;
+                                            margin-bottom: 12px;
+                                            cursor: pointer;
+                                            font-size: 18px;
+                                            -webkit-user-select: none;
+                                            -moz-user-select: none;
+                                            -ms-user-select: none;
+                                            user-select: none;
+                                            font-family: $inter;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            /* identical to box height */
+            
+                                            display: flex;
+                                            align-items: flex-end;
+            
+                                            color: #000000;
+                                        }
+                                        
+                                        /* Hide the browser's default checkbox */
+                                        & .container input {
+                                            position: absolute;
+                                            opacity: 0;
+                                            cursor: pointer;
+                                            height: 0;
+                                            width: 0;
+                                        }
+                                        
+                                        /* Create a custom checkbox */
+                                        & .checkmark {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            height: 18px;
+                                            width: 18px;
+                                            background-color: #eee;
+                                        }
+                                        
+                                        /* On mouse-over, add a grey background color */
+                                        & .container:hover input ~ .checkmark {
+                                            background-color: #ccc;
+                                        }
+                                        
+                                        /* When the checkbox is checked, add a blue background */
+                                        & .container input:checked ~ .checkmark {
+                                            background-color: #019748;
+                                        }
+                                        
+                                        /* Create the checkmark/indicator (hidden when not checked) */
+                                        & .checkmark:after {
+                                            content: "";
+                                            position: absolute;
+                                            display: none;
+                                        }
+                                        
+                                        /* Show the checkmark when checked */
+                                        & .container input:checked ~ .checkmark:after {
+                                            display: block;
+                                        }
+                                        
+                                        /* Style the checkmark/indicator */
+                                        & .container .checkmark:after {
+                                            left: 5px;
+                                            top: 1px;
+                                            width: 5px;
+                                            height: 10px;
+                                            border: solid white;
+                                            border-width: 0 2px 2px 0;
+                                            -webkit-transform: rotate(35deg);
+                                            -ms-transform: rotate(35deg);
+                                            transform: rotate(35deg);
+                                        }
+                                    }
+                                    & .email {
+                                        margin-top: 10px;
+                                        width: 100%;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                }
+
+                            }
+                            & .bottom {
+                                margin-top: 44px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-between;
+                                align-items: center;
+                                & .left {
+                                    margin-bottom: 12px;
+                                    font-family: $lexend;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 20px;
+                                    line-height: 25px;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #019748;
+                                }
+                                & .right {
+                                    width: 100%;
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 0px;
-                                        width: 125px;
+                                        width: 100%;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
                                         // padding: 3px 10px 3px 6px;
                                         & .select-box {
                                             display: flex;
-                                            width: 55px;
+                                            width: 100%;
                                             height: 40px;
                                             flex-direction: column;
                                             & .options-container {
@@ -1791,7 +2160,7 @@
                                                 width: 100%;
                                                 opacity: 0;
                                                 // transition: 0.2s ease;
-                                                // border-radius: 5px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
                                                 order: 1;
                                                 font-size: 14px;
@@ -1826,17 +2195,16 @@
                                                 }
                                             }
                                             & .selected {
-                                                width: 125px;
+                                                width: 100%;
                                                 height: 40px;
                                                 color: #000;
                                                 position: relative;
                                                 display: flex;
                                                 align-items: center;
                                                 order: 0;
-                                                font-family: $inter;
-                                                font-style: normal;
-                                                font-weight: 400;
                                                 font-size: 16px;
+                                                line-height: 19px;
+                                                font-family: $lexend;
                                                 padding: 8px 12px;
                                                 cursor: pointer;
                                                 background: rgb(228, 228, 228);
@@ -1864,178 +2232,117 @@
                                                 }
                                             }
                                         }
-                                    }
-                                }
-                                & .checkbox-wrapper {
-                                    margin-top: 15px;
-                                    /* Customize the label (the container) */
-                                    & .container {
-                                        display: block;
-                                        position: relative;
-                                        padding-left: 35px;
-                                        margin-bottom: 12px;
-                                        cursor: pointer;
-                                        font-size: 18px;
-                                        -webkit-user-select: none;
-                                        -moz-user-select: none;
-                                        -ms-user-select: none;
-                                        user-select: none;
-                                        font-family: $inter;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 17px;
-                                        /* identical to box height */
-        
-                                        display: flex;
-                                        align-items: flex-end;
-        
-                                        color: #000000;
-                                    }
-                                    
-                                    /* Hide the browser's default checkbox */
-                                    & .container input {
-                                        position: absolute;
-                                        opacity: 0;
-                                        cursor: pointer;
-                                        height: 0;
-                                        width: 0;
-                                    }
-                                    
-                                    /* Create a custom checkbox */
-                                    & .checkmark {
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        height: 18px;
-                                        width: 18px;
-                                        background-color: #eee;
-                                    }
-                                    
-                                    /* On mouse-over, add a grey background color */
-                                    & .container:hover input ~ .checkmark {
-                                        background-color: #ccc;
-                                    }
-                                    
-                                    /* When the checkbox is checked, add a blue background */
-                                    & .container input:checked ~ .checkmark {
-                                        background-color: #019748;
-                                    }
-                                    
-                                    /* Create the checkmark/indicator (hidden when not checked) */
-                                    & .checkmark:after {
-                                        content: "";
-                                        position: absolute;
-                                        display: none;
-                                    }
-                                    
-                                    /* Show the checkmark when checked */
-                                    & .container input:checked ~ .checkmark:after {
-                                        display: block;
-                                    }
-                                    
-                                    /* Style the checkmark/indicator */
-                                    & .container .checkmark:after {
-                                        left: 5px;
-                                        top: 1px;
-                                        width: 5px;
-                                        height: 10px;
-                                        border: solid white;
-                                        border-width: 0 2px 2px 0;
-                                        -webkit-transform: rotate(35deg);
-                                        -ms-transform: rotate(35deg);
-                                        transform: rotate(35deg);
-                                    }
-                                }
-                                & .email {
-                                    margin-top: 10px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                            }
-                        }
-                    }
-                    & .btn {
-                        position: absolute;
-                        bottom: 114px;
-                        right: 0px;
-                        width: 159px;
-                        height: 48px;
-                        padding: 0 24px;
-                        border: none;
-                        background: #019748;
-                        color: #fff;
-                        font-family: $readex;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 24px;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                    }
-                    & .btn.prev-step {
-                        width: 160px;
-                        right: 172px;
-                        background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
-                    }
-                }
-                & .step.active {
-                    display: block;
-                }
-                & .step2 {
-                    & .content {
-                        & .left {
-                            & .info {
-                                &:last-child {
-                                    margin-top: 56px;
-                                }
-                            }
-                        }
-                        & .right {
-                            & form {
-                                & .date-wrapper {
-                                    & .date {
-                                        margin-top: 40px;
-                                        height: 40px;
-                                        width: 100%;
-                                        padding: 0px 5px 0px 12px;
-                                        font-family: $inter;
-                                        background: rgb(228, 228, 228);
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        outline: none;
-                                        border: none;
-                                        color: #000000;
-                                        &::-webkit-calendar-picker-indicator { 
-                                            opacity: 1;
+                                        &:nth-child(2) {
+                                            margin-top: 12px;
+                                        }
+                                        &:nth-child(3) {
+                                            margin-top: 24px;
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    & .btn.prev-step {
+                    & .next-step {
+                        padding: 0px 24px;
+                        position: absolute;
                         width: 160px;
-                        right: 172px;
+                        height: 48px;
+                        left: 10%;
+                        top: 1038px;
+                        background: #019748;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        transform: translateX(95%);
+                        line-height: 24px;
+                        color: #FFFFFF;
+                        border: 0;
+                    }
+                    & .prev-step {
+                        padding: 0px 24px;
+                        position: absolute;
+                        width: 160px;
+                        height: 48px;
+                        left: 6%;
+                        top: 1038px;
                         background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #019748;
+                        border: 1px solid #019748;;
+                    }
+                }
+                & .step.active {
+                    display: block;
+                }
+                & .step2 {
+                    & .top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                    }
+                    & .middle {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                        & .right {
+                            & .date-wrapper {
+                                & .date {
+                                    margin-top: 40px;
+                                    height: 40px;
+                                    width: 100%;
+                                    padding: 0px 5px 0px 12px;
+                                    font-family: $inter;
+                                    background: rgb(228, 228, 228);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    outline: none;
+                                    border: none;
+                                    color: #000000;
+                                    &::-webkit-calendar-picker-indicator { 
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 & .step3 {
                     & .content {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        justify-content: space-between;
                         & .left {
                             & .top {
+                                width: 385px;
                                 margin-top: 32px;
                                 background: #F8F7FA;
                                 padding: 24px;
@@ -2061,15 +2368,15 @@
                                 }
                             }
                             & .bottom {
-                                z-index: 1;
                                 margin-top: 12px;
                                 width: 385px;
-                                height: 531px;
-                                padding: 24px;
+                                height: 462px;
+                                padding: 16px 24px 0;
+                                background: #F8F7FA;
                                 & .wrapper {
                                     padding-bottom: 12px;
                                     border-bottom: 1px solid #4F4F4F;
-                                    margin-bottom: 12px;
+                                    margin-bottom: 3px;
                                     & label {
                                         font-family: $lexend;
                                         font-style: normal;
@@ -2095,8 +2402,7 @@
                             }
                         }
                         & .right {
-                            z-index: 1;
-                            width: 181px;
+                            width: 100%;
                             margin-top: 32px;
                             & .title {
                                 font-family: $lexend;
@@ -2146,9 +2452,9 @@
                     display: none;
                     & .title {
                         height: 40px;
-                        min-width: 435px;           
+                        min-width: 436px;           
                         position: absolute;
-                        top: 250px;
+                        top: 270px;
                         left: 50%;
                         transform: translateX(-50%);
                         font-family: $lexend;
@@ -2163,9 +2469,10 @@
                     }
                     & .description {
                         position: absolute;
-                        top: 335px;
+                        margin-top: 30px;
+                        top: 325px;
                         left: 50%;
-                        min-width: 335px;
+                        min-width: 355px;
                         transform: translateX(-50%);
                         height: 34px;
                         font-family: $inter;
@@ -2179,6 +2486,7 @@
                         color: #4F4F4F;
                     }
                     & .event-info {
+                        margin-top: 30px;
                         position: absolute;
                         top: 400px;
                         left: 50%;
@@ -2310,6 +2618,7 @@
                 }
                 & .findBooking {
                     display: flex;
+                    flex-direction: column;
                     width: 100%;
                     align-items: center;
                     justify-content: space-between;
@@ -2320,13 +2629,13 @@
                         font-weight: 400;
                         font-size: 20px;
                         line-height: 25px;
-                        display: none;
                         align-items: flex-end;
                         color: #019748;
                     }
                     & input {
+                        width: 100%;
+                        margin-top: 24px;
                         padding: 0px 12px;
-                        width: 327px;
                         height: 40px;
                         background: #F8F7FA;
                         font-family: 'Inter';
@@ -2365,7 +2674,7 @@
             }
             & .step2 {
                 & .step-title {
-                    width: 588px;
+                    width: 100%;
                     height: 40px;
                     background: #F8F7FA;
                     display: flex;
@@ -2392,7 +2701,7 @@
                     flex-direction: column;
                     & .left {
                         display: flex;
-                        flex-direction: row;
+                        flex-direction: column;
                         justify-content: space-between;
                         & .top {
                             background: #F8F7FA;
@@ -2425,7 +2734,7 @@
                             }
                         }
                         & .bottom {
-                            margin-top: 162px;
+                            margin-top: 20px;
                             height: 531px;
                             padding: 24px;
                             background: #F8F7FA;
@@ -2508,67 +2817,6 @@
             & .step.active {
                 display: block;
             }
-        }
-        & .top {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 0;
-            & .title {
-                font-family: $lexend;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                margin-left: 24px;
-                line-height: 28px;
-                text-transform: uppercase;
-                color: #000000;
-            }
-            & .buttons {
-                margin-left: 24px;
-                margin-bottom: 86px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 337px;
-                & .button {
-                    z-index: 2;
-                    width: 327px;
-                    height: 50px;
-                    border: 1px solid $green;
-                    cursor: pointer;
-                    a {
-                        text-decoration: none;
-                    }
-                    &:last-child {
-                        margin-top: 24px;
-                    }
-                }
-                & .button.make-booking {
-                    background: #019748;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: #FFFFFF;
-                }
-                & .button.view-booking {
-                    background: #fff;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: uppercase;
-                    color: $green;
-                }
-            }
-    
         }
         & .card-wrapper {
             margin-top: 54px;
@@ -2679,1083 +2927,7 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        & .makebooking-stepper {
-            position: absolute;
-            top: 0px;
-            right: -200%;
-            width: 100%;
-            height: 835px;
-            padding: 16px 24px 24px;
-            overflow: hidden;
-            background: #fff;
-            transition: .3s ease;
-            z-index: 20;
-            & .top {
-                & .title {
-                    margin-left: 48px;
-                    width: 473px;
-                    height: 28px;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 22px;
-                    line-height: 28px;
-                    text-transform: uppercase;
-                    color: #000000;
-                    margin: 0px;
-                }
-                & .close {
-                    width: 28px;
-                    height: 28px;
-                    cursor: pointer;
-                    position: absolute;
-                    top: 0;
-                    right: 42px;
-                    & div {
-                        position: relative;
-                        height: 28px;
-                        width: 28px;
-                        left: 50%;
-                        top: 20%;
-                        // transform: translate(-50%, -50%);
-                        &::before {
-                            content: '';
-                            height: 16px;
-                            width: 2px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: #000;
-                            transform: rotate(-45deg);
-                        }
-                        &::after {
-                            content: '';
-                            height: 16px;
-                            width: 2px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: #000;
-                            transform: rotate(45deg);
-                        }
-                    }
-                }
-            }
-            & .progress {
-                width: 100%;
-                display: flex;
-                margin-top: 40px;
-                justify-content: space-between;
-                position: relative;
-                & .progress-bar {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background: #E6F5ED;
-                    z-index: -1;
-                }
-                & .current-progress {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 0;
-                    width: 0%;
-                    height: 4px;
-                    background: $green;
-                    transition: .3s;
-                    z-index: -1;
-                }
-                & .circle-green {
-                    width: 20px;
-                    height: 20px;
-                    background: #E6F5ED;
-                    position: relative;
-                    border-radius: 50%;
-                    transition: .3s ease;
-                    & .circle-white {
-                        width: 9px;
-                        height: 9px;
-                        background: #fff;
-                        border-radius: 50%;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
-                }
-                & .circle-green.active {
-                    background-color: #019748;
-                }
-            }
-            & .steps-container {
-                display: flex;
-                width: 100%;
-                // transition: .5s ease;
-                & .step {
-                    flex-shrink: 0;
-                    display: none;
-                    width: 100%;
-                    margin-top: 32px;
-                    height: 829px;
-                    position: relative;
-                    margin-right: 24px;
-                    & .step-title {
-                        display: flex;
-                        & .step-title.green {
-                            margin-left: 48px;
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 20px;
-                            text-transform: uppercase;
-                            color: #fff;
-                            margin: 0px;
-                            padding: 10px 15px;
-                            background: #019748;
-                        }
-                        & .step-title.grey {
-                            margin-left: 48px;
-                            font-family: $lexend;
-                            width: 100%;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 20px;
-                            text-transform: uppercase;
-                            color: #000000;
-                            margin: 0px;
-                            padding: 10px 15px;
-                            background: rgb(248,247,250);
-                        }
-                    }
-                    & .content {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        & .left {
-                            display: none;
-                            flex-direction: column;
-                            & .info {
-                                margin-top: 37px;
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 20px;
-                                line-height: 25px;
-                                display: flex;
-                                align-items: flex-end;
-                                color: #019748;
-                                &:nth-child(2) {
-                                    margin-top: 55px;
-                                }
-                                &:last-child {
-                                    margin-top: 244px;
-                                }
-                            }
-                            & .info-description {
-                                margin-top: 12px;
-                                width: 147px;
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                display: flex;
-                                align-items: center;
-        
-                                color: #4F4F4F;
-                            }
-                        }
-                        & .right {
-                            & form {
-                                display: flex;
-                                flex-direction: column;
-                                width: 327px;
-                                & .select-wrapper {
-                                        display: block;
-                                        position: relative;
-                                        margin-top: 37px;
-                                        width: 327px;
-                                        height: 40px;
-                                        // border: 1px solid #F1F1F1;
-                                        // padding: 3px 10px 3px 6px;
-                                        & .select-box {
-                                            display: flex;
-                                            width: 327px;
-                                            height: 40px;
-                                            flex-direction: column;
-                                            & .options-container {
-                                                color: #000;
-                                                background: white;
-                                                max-height: 0;
-                                                width: 100%;
-                                                opacity: 0;
-                                                // transition: 0.2s ease;
-                                                // border-radius: 5px;
-                                                overflow: hidden;
-                                                order: 1;
-                                                font-size: 14px;
-                                                position: absolute;
-                                                top: 33px;
-                                                z-index: 10;
-                                                height: 96px;
-                                                & .option {
-                                                    padding: 8px 12px;
-                                                    cursor: pointer;
-                                                    & label {
-                                                        cursor: pointer;
-                                                    }
-                                                    & .radio {
-                                                        display: none;
-                                                    }
-                                                }
-                                            }
-                                            & .options-container.active {
-                                                max-height: 240px;
-                                                opacity: 1;
-                                                height: 100px;
-                                                position: absolute;
-                                                top: 33px;
-                                                z-index: 10;
-                                                overflow-y: scroll;
-                                                & + .selected::before {
-                                                    transform: rotate(220deg);
-                                                }
-                                                & + .selected::after {
-                                                    transform: rotate(140deg);
-                                                }
-                                            }
-                                            & .selected {
-                                                width: 327px;
-                                                height: 40px;
-                                                color: #000;
-                                                position: relative;
-                                                display: flex;
-                                                align-items: center;
-                                                order: 0;
-                                                font-size: 16px;
-                                                line-height: 19px;
-                                                font-family: $lexend;
-                                                padding: 8px 12px;
-                                                cursor: pointer;
-                                                background: rgb(228, 228, 228);
-                                            &::before {
-                                                content: "";
-                                                position: absolute;
-                                                height: 7px;
-                                                width: 2px;
-                                                right: 14px;
-                                                background-color: #000;
-                                                top: 18px;
-                                                transform: rotate(140deg);
-                                                transition: 0.4s ease;
-                                            }
-                                            &::after {
-                                                content: "";
-                                                position: absolute;
-                                                height: 7px;
-                                                width: 2px;
-                                                right: 10px;
-                                                background-color: #000;
-                                                top: 18px;
-                                                transform: rotate(220deg);
-                                                transition: 0.4s ease;
-                                            }
-                                        }
-                                    }
-                                }
-                                & .select-wrapper-adult-visitors {
-                                    margin-top: 43px;
-                                }
-                                & .select-wrapper-child-visitors {
-                                    margin-top: 12px;
-                                }
-                                & .select-wrapper-country {
-                                    margin-top: 24px;
-                                }
-                                & .name {
-                                    margin-top: 40px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .second-name {
-                                    margin-top: 12px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .code-number {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    margin-top: 24px;
-                                    width: 327px;
-                                    height: 40px;
-                                    & .number {
-                                        width: 192px;
-                                        height: 40px;
-                                        background: rgb(228, 228, 228);
-                                        border: 0px;
-                                        padding: 8px 12px;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        font-family: $lexend;
-                                    }
-                                    & .select-wrapper-code {
-                                        display: block;
-                                        position: relative;
-                                        margin-top: 0px;
-                                        width: 125px;
-                                        height: 40px;
-                                        // border: 1px solid #F1F1F1;
-                                        // padding: 3px 10px 3px 6px;
-                                        & .select-box {
-                                            display: flex;
-                                            width: 55px;
-                                            height: 40px;
-                                            flex-direction: column;
-                                            & .options-container {
-                                                color: #000;
-                                                background: white;
-                                                max-height: 0;
-                                                width: 100%;
-                                                opacity: 0;
-                                                // transition: 0.2s ease;
-                                                // border-radius: 5px;
-                                                overflow: hidden;
-                                                order: 1;
-                                                font-size: 14px;
-                                                position: absolute;
-                                                top: 33px;
-                                                z-index: 10;
-                                                height: 96px;
-                                                & .option {
-                                                    padding: 8px 12px;
-                                                    cursor: pointer;
-                                                    & label {
-                                                        cursor: pointer;
-                                                    }
-                                                    & .radio {
-                                                        display: none;
-                                                    }
-                                                }
-                                            }
-                                            & .options-container.active {
-                                                max-height: 240px;
-                                                opacity: 1;
-                                                height: 100px;
-                                                position: absolute;
-                                                top: 33px;
-                                                z-index: 10;
-                                                overflow-y: scroll;
-                                                & + .selected::before {
-                                                    transform: rotate(220deg);
-                                                }
-                                                & + .selected::after {
-                                                    transform: rotate(140deg);
-                                                }
-                                            }
-                                            & .selected {
-                                                width: 125px;
-                                                height: 40px;
-                                                color: #000;
-                                                position: relative;
-                                                display: flex;
-                                                align-items: center;
-                                                order: 0;
-                                                font-family: $inter;
-                                                font-style: normal;
-                                                font-weight: 400;
-                                                font-size: 16px;
-                                                padding: 8px 12px;
-                                                cursor: pointer;
-                                                background: rgb(228, 228, 228);
-                                                &::before {
-                                                    content: "";
-                                                    position: absolute;
-                                                    height: 7px;
-                                                    width: 2px;
-                                                    right: 14px;
-                                                    background-color: #000;
-                                                    top: 18px;
-                                                    transform: rotate(140deg);
-                                                    transition: 0.4s ease;
-                                                }
-                                                &::after {
-                                                    content: "";
-                                                    position: absolute;
-                                                    height: 7px;
-                                                    width: 2px;
-                                                    right: 10px;
-                                                    background-color: #000;
-                                                    top: 18px;
-                                                    transform: rotate(220deg);
-                                                    transition: 0.4s ease;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                & .checkbox-wrapper {
-                                    margin-top: 15px;
-                                    /* Customize the label (the container) */
-                                    & .container {
-                                        display: block;
-                                        position: relative;
-                                        padding-left: 35px;
-                                        margin-bottom: 12px;
-                                        cursor: pointer;
-                                        font-size: 18px;
-                                        -webkit-user-select: none;
-                                        -moz-user-select: none;
-                                        -ms-user-select: none;
-                                        user-select: none;
-                                        font-family: $inter;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 17px;
-                                        /* identical to box height */
-        
-                                        display: flex;
-                                        align-items: flex-end;
-        
-                                        color: #000000;
-                                    }
-                                    
-                                    /* Hide the browser's default checkbox */
-                                    & .container input {
-                                        position: absolute;
-                                        opacity: 0;
-                                        cursor: pointer;
-                                        height: 0;
-                                        width: 0;
-                                    }
-                                    
-                                    /* Create a custom checkbox */
-                                    & .checkmark {
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        height: 18px;
-                                        width: 18px;
-                                        background-color: #eee;
-                                    }
-                                    
-                                    /* On mouse-over, add a grey background color */
-                                    & .container:hover input ~ .checkmark {
-                                        background-color: #ccc;
-                                    }
-                                    
-                                    /* When the checkbox is checked, add a blue background */
-                                    & .container input:checked ~ .checkmark {
-                                        background-color: #019748;
-                                    }
-                                    
-                                    /* Create the checkmark/indicator (hidden when not checked) */
-                                    & .checkmark:after {
-                                        content: "";
-                                        position: absolute;
-                                        display: none;
-                                    }
-                                    
-                                    /* Show the checkmark when checked */
-                                    & .container input:checked ~ .checkmark:after {
-                                        display: block;
-                                    }
-                                    
-                                    /* Style the checkmark/indicator */
-                                    & .container .checkmark:after {
-                                        left: 5px;
-                                        top: 1px;
-                                        width: 5px;
-                                        height: 10px;
-                                        border: solid white;
-                                        border-width: 0 2px 2px 0;
-                                        -webkit-transform: rotate(35deg);
-                                        -ms-transform: rotate(35deg);
-                                        transform: rotate(35deg);
-                                    }
-                                }
-                                & .email {
-                                    margin-top: 10px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                            }
-                        }
-                    }
-                    & .btn {
-                        position: absolute;
-                        bottom: 114px;
-                        right: 0px;
-                        width: 159px;
-                        height: 48px;
-                        padding: 0 24px;
-                        border: none;
-                        background: #019748;
-                        color: #fff;
-                        font-family: $readex;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 24px;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                    }
-                    & .btn.prev-step {
-                        width: 160px;
-                        right: 172px;
-                        background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
-                    }
-                }
-                & .step.active {
-                    display: block;
-                }
-                & .step2 {
-                    & .content {
-                        & .left {
-                            & .info {
-                                &:last-child {
-                                    margin-top: 56px;
-                                }
-                            }
-                        }
-                        & .right {
-                            & form {
-                                & .date-wrapper {
-                                    & .date {
-                                        margin-top: 40px;
-                                        height: 40px;
-                                        width: 100%;
-                                        padding: 0px 5px 0px 12px;
-                                        font-family: $inter;
-                                        background: rgb(228, 228, 228);
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        outline: none;
-                                        border: none;
-                                        color: #000000;
-                                        &::-webkit-calendar-picker-indicator { 
-                                            opacity: 1;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    & .btn.prev-step {
-                        width: 160px;
-                        right: 172px;
-                        background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
-                    }
-                }
-                & .step3 {
-                    & .content {
-                        & .left {
-                            width: 100%;
-                            display: flex;
-                            & .top {
-                                margin-top: 32px;
-                                background: #F8F7FA;
-                                padding: 24px;
-                                & .title {
-                                    width: 167px;
-                                    font-family: $lexend;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 20px;
-                                    line-height: 25px;
-                                    display: flex;
-                                    align-items: center;
-                                    color: #000000;
-                                    height: 50px;
-                                }
-                                & .date-time {
-                                    & li {
-                                        margin-top: 12px;
-                                        &:first-child {
-                                            margin-top: 0px;
-                                        }
-                                    }
-                                }
-                            }
-                            & .bottom {
-                                margin-top: 12px;
-                                width: 100%;
-                                height: 531px;
-                                padding: 24px;
-                                background: #F8F7FA;
-                                & .wrapper {
-                                    padding-bottom: 12px;
-                                    border-bottom: 1px solid #4F4F4F;
-                                    margin-bottom: 12px;
-                                    & label {
-                                        font-family: $lexend;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 18px;
-                                        display: flex;
-                                        align-items: center;
-                                        color: #848484;
-                                    }
-                                    & li {
-                                        margin-top: 8px;
-                                        margin-left: 24px;
-                                        font-family: 'Inter';
-                                        font-style: normal;
-                                        font-weight: 600;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        align-items: center;
-                                        color: #4F4F4F;
-                                    }
-                                }
-                            }
-                        }
-                        & .right {
-                            display: none;
-                            width: 181px;
-                            margin-top: 32px;
-                            & .title {
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 20px;
-                                line-height: 25px;
-                                display: flex;
-                                align-items: center;
-                                color: #019748;
-                            }
-                            & .description {
-                                margin-top: 12px;
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                display: flex;
-                                align-items: center;
-                                color: #4F4F4F;
-                            }
-                            & .links {
-                                margin-top: 24px;
-                                & li {
-                                    margin-left: 24px;
-                                    margin-top: 12px;
-                                    color: #019748;
-                                    &:first-child {
-                                        margin-top: 0px;
-                                    }
-                                    & a {
-                                        font-family: $inter;
-                                        font-style: normal;
-                                        font-weight: 600;
-                                        font-size: 14px;
-                                        line-height: 17px;
-                                        text-decoration-line: underline;
-                                        color: #019748;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .step4 {
-                    display: none;
-                    & .title {
-                        height: 40px;
-                        min-width: 435px;           
-                        position: absolute;
-                        top: 250px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        font-family: $lexend;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 32px;
-                        line-height: 40px;
-                        display: flex;
-                        align-items: center;
-                        text-align: center;
-                        color: #019748;
-                    }
-                    & .description {
-                        position: absolute;
-                        top: 335px;
-                        left: 50%;
-                        min-width: 335px;
-                        transform: translateX(-50%);
-                        height: 34px;
-                        font-family: $inter;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 14px;
-                        line-height: 17px;
-                        display: flex;
-                        align-items: center;
-                        text-align: center;
-                        color: #4F4F4F;
-                    }
-                    & .event-info {
-                        position: absolute;
-                        top: 400px;
-                        left: 50%;
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 24px;
-                        transform: translateX(-50%);
-                        width: 100%;
-                        height: 100px;
-                        background: #F8F7FA;
-                        & .place {
-                            width: 145px;
-                            height: 50px;
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 20px;
-                            line-height: 25px;
-                            display: flex;
-                            align-items: center;
-                            color: #000000;
-                        }
-                        & .time-date {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            & li {
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                color: #4F4F4F;
-                                & span {
-                                    font-weight: 600;
-                                    color: #000;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        & .findbooking-stepper {
-            position: absolute;
-            top: 0;
-            right: -200%;
-            padding: 0 24px;
-            width: 100%;
-            height: 880px;
-            background-color: #fff;
-            transition: .3s ease;
-            z-index: 20;
-            & .top {
-                & .title {
-                    margin-left: 48px;
-                    width: 473px;
-                    height: 28px;
-                    font-family: $lexend;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 22px;
-                    line-height: 28px;
-                    text-transform: uppercase;
-                    color: #000000;
-                    margin: 0px;
-                    z-index: -1;
-                }
-                & .close {
-                    width: 28px;
-                    height: 28px;
-                    cursor: pointer;
-                    position: absolute;
-                    top: 0;
-                    right: 42px;
-                    & div {
-                        position: relative;
-                        height: 28px;
-                        width: 28px;
-                        left: 50%;
-                        top: 20%;
-                        // transform: translate(-50%, -50%);
-                        &::before {
-                            content: '';
-                            height: 16px;
-                            width: 2px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: #000;
-                            transform: rotate(-45deg);
-                        }
-                        &::after {
-                            content: '';
-                            height: 16px;
-                            width: 2px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: #000;
-                            transform: rotate(45deg);
-                        }
-                    }
-                }
-            }
-            & .step {
-                display: none;
-            }
-            & .step1 {
-                & .step-title {
-                    width: 100%;
-                    height: 40px;
-                    background: #F8F7FA;
-                    display: flex;
-                    padding-left: 10px;
-                    margin-top: 40px;
-                    & .title {
-                        font-family: $lexend;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 25px;
-                        height: 33px;
-                        display: flex;
-                        align-items: flex-end;
-                        text-transform: uppercase;
-                        color: #000000;
-                    }
-                }
-                & .findBooking {
-                    display: flex;
-                    width: 100%;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 40px;
-                    & .title {
-                        font-family: $lexend;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 25px;
-                        display: none;
-                        align-items: flex-end;
-                        color: #019748;
-                    }
-                    & input {
-                        padding: 0px 12px;
-                        width: 327px;
-                        height: 40px;
-                        background: #F8F7FA;
-                        font-family: 'Inter';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 16px;
-                        border: 0;
-                        line-height: 18px;
-                        color: #000;
-                        z-index: 20;
-                        &::placeholder {
-                            color: #666666;
-                        }
-                    }
-                    &:last-child {
-                        margin-top: 24px;
-                    }
-                }
-                & .find {
-                    padding: 0px 24px;
-                    position: absolute;
-                    width: 101px;
-                    height: 48px;
-                    right: 24px;
-                    bottom: 72px;
-                    background: #019748;
-                    border: 0;
-                    color: #fff;
-                    font-family: $readex;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 20px;
-                    line-height: 24px;
-                    cursor: pointer;
-                }
-            }
-            & .step2 {
-                & .step-title {
-                    width: 588px;
-                    height: 40px;
-                    background: #F8F7FA;
-                    display: flex;
-                    padding-left: 10px;
-                    margin-top: 40px;
-                    & .title {
-                        font-family: $lexend;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 25px;
-                        height: 33px;
-                        display: flex;
-                        align-items: flex-end;
-                        text-transform: uppercase;
-                        color: #000000;
-                        & span {
-                            color: $green;
-                        }
-                    }
-                }
-                & .content {
-                    display: flex;
-                    flex-direction: column;
-                    & .left {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        & .top {
-                            background: #F8F7FA;
-                            padding: 12px;
-                            width: 191px;
-                            height: 132px;
-                            display: flex;
-                            flex-direction: column;
-                            margin-top: 20px;
-                            & .title {
-                                width: 167px;
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 20px;
-                                line-height: 25px;
-                                display: flex;
-                                align-items: center;
-                                color: #000000;
-                                height: 50px;
-                            }
-                            & .date-time {
-                                margin-left: 12px;
-                                & li {
-                                    margin-top: 12px;
-                                    &:first-child {
-                                        margin-top: 0px;
-                                    }
-                                }
-                            }
-                        }
-                        & .bottom {
-                            margin-top: 162px;
-                            height: 531px;
-                            padding: 24px;
-                            background: #F8F7FA;
-                            width: 100%;
-                            & .wrapper {
-                                padding-bottom: 12px;
-                                border-bottom: 1px solid #4F4F4F;
-                                margin-bottom: 12px;
-                                & label {
-                                    font-family: $lexend;
-                                    font-style: normal;
-                                    font-weight: 400;
-                                    font-size: 14px;
-                                    line-height: 18px;
-                                    display: flex;
-                                    align-items: center;
-                                    color: #848484;
-                                }
-                                & li {
-                                    margin-top: 8px;
-                                    margin-left: 24px;
-                                    font-family: 'Inter';
-                                    font-style: normal;
-                                    font-weight: 600;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    align-items: center;
-                                    color: #4F4F4F;
-                                }
-                            }
-                        }
-                    }
-                    & .right {
-                        width: 181px;
-                        margin-top: 32px;
-                        & .title {
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 25px;
-                            display: flex;
-                            align-items: center;
-                            color: #019748;
-                        }
-                        & .description {
-                            margin-top: 12px;
-                            font-family: $inter;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 17px;
-                            display: flex;
-                            align-items: center;
-                            color: #4F4F4F;
-                        }
-                        & .links {
-                            margin-top: 24px;
-                            & li {
-                                margin-left: 24px;
-                                margin-top: 12px;
-                                color: #019748;
-                                &:first-child {
-                                    margin-top: 0px;
-                                }
-                                & a {
-                                    font-family: $inter;
-                                    font-style: normal;
-                                    font-weight: 600;
-                                    font-size: 14px;
-                                    line-height: 17px;
-                                    text-decoration-line: underline;
-                                    color: #019748;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            & .step.active {
-                display: block;
-            }
-        }
-        & .top {
+        & .top-head {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -3922,6 +3094,41 @@
         position: relative;
         overflow: hidden;
         margin: auto;
+        & .top-head {
+            width: 100%;
+            padding: 0 48px;
+            display: flex;
+            justify-content: space-between;
+            & .title {
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 28px;
+                line-height: 28px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+            & .buttons {
+                & .button {
+                    width: 161px;
+                    height: 39px;
+                    background: #019748;
+                    border: 1px solid #019748;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                }
+                & .view-booking {
+                    background-color: #fff;
+                    color: #019748;
+                }
+            }
+        }
         & .makebooking-stepper {
             position: absolute;
             top: 0px;
@@ -4030,94 +3237,70 @@
                 }
             }
             & .steps-container {
-                display: flex;
-                width: 100%;
-                // transition: .5s ease;
                 & .step {
-                    flex-shrink: 0;
                     display: none;
-                    width: 100%;
-                    margin-top: 32px;
-                    height: 829px;
-                    position: relative;
-                    margin-right: 24px;
+                    height: 832px;
                     & .step-title {
+                        margin-top: 24px;
                         display: flex;
-                        & .step-title.green {
-                            margin-left: 48px;
-                            font-family: $lexend;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 20px;
-                            line-height: 20px;
-                            text-transform: uppercase;
-                            color: #fff;
-                            margin: 0px;
-                            padding: 10px 15px;
+                        & .green {
+                            padding: 8px 10px 8px 15px;
+                            width: 40px;
+                            height: 40px;
                             background: #019748;
-                        }
-                        & .step-title.grey {
-                            margin-left: 48px;
                             font-family: $lexend;
-                            width: 100%;
                             font-style: normal;
                             font-weight: 400;
                             font-size: 20px;
-                            line-height: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            text-transform: uppercase;
+                            color: #FFFFFF;
+                            margin-top: 0;
+                        }
+                        & .grey {
+                            padding: 10px;
+                            width: 548px;
+                            height: 40px;
+                            background: #F8F7FA;
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
                             text-transform: uppercase;
                             color: #000000;
-                            margin: 0px;
-                            padding: 10px 15px;
-                            background: rgb(248,247,250);
+                            margin-top: 0;
                         }
                     }
                     & .content {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        & .left {
-                            display: flex;
-                            flex-direction: column;
-                            & .info {
-                                margin-top: 37px;
-                                font-family: $lexend;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 20px;
-                                line-height: 25px;
-                                display: flex;
-                                align-items: flex-end;
-                                color: #019748;
-                                &:nth-child(2) {
-                                    margin-top: 55px;
+                        & form {
+                            margin-top: 37px;
+                            & .top {
+                                & .left {
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        /* identical to box height */
+
+                                        display: flex;
+                                        align-items: flex-end;
+
+                                        /* green main */
+
+                                        color: #019748;
+                                    }
                                 }
-                                &:last-child {
-                                    margin-top: 244px;
-                                }
-                            }
-                            & .info-description {
-                                margin-top: 12px;
-                                width: 147px;
-                                font-family: $inter;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 17px;
-                                display: flex;
-                                align-items: center;
-        
-                                color: #4F4F4F;
-                            }
-                        }
-                        & .right {
-                            & form {
-                                display: flex;
-                                flex-direction: column;
-                                width: 327px;
-                                & .select-wrapper {
+                                & .right {
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 37px;
                                         width: 327px;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
@@ -4206,46 +3389,40 @@
                                             }
                                         }
                                     }
+                                    }
                                 }
-                                & .select-wrapper-adult-visitors {
-                                    margin-top: 43px;
+                            }
+                            & .middle {
+                                margin-top: 40px;
+                                display: flex;
+                                justify-content: space-between;
+                                & .left {
+                                    & .info {
+                                        font-family: $lexend;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 20px;
+                                        line-height: 25px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #019748;
+                                    }
+                                    & .info-description {
+                                        width: 149px;
+                                        font-family: $inter;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        display: flex;
+                                        align-items: center;
+                                        color: #4F4F4F;
+                                    }
                                 }
-                                & .select-wrapper-child-visitors {
-                                    margin-top: 12px;
-                                }
-                                & .select-wrapper-country {
-                                    margin-top: 24px;
-                                }
-                                & .name {
-                                    margin-top: 40px;
+                                & .right {
                                     width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .second-name {
-                                    margin-top: 12px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                                & .code-number {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    margin-top: 24px;
-                                    width: 327px;
-                                    height: 40px;
-                                    & .number {
-                                        width: 192px;
+                                    & .name {
+                                        width: 327px;
                                         height: 40px;
                                         background: rgb(228, 228, 228);
                                         border: 0px;
@@ -4254,17 +3431,248 @@
                                         line-height: 19px;
                                         font-family: $lexend;
                                     }
-                                    & .select-wrapper-code {
+                                    & .second-name {
+                                        margin-top: 12px;
+                                        width: 327px;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                    & .code-number {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 24px;
+                                        height: 40px;
+                                        & .number {
+                                            width: 192px;
+                                            height: 40px;
+                                            background: rgb(228, 228, 228);
+                                            border: 0px;
+                                            padding: 8px 12px;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            font-family: $lexend;
+                                        }
+                                        & .select-wrapper-code {
+                                            display: block;
+                                            position: relative;
+                                            margin-top: 0px;
+                                            width: 125px;
+                                            height: 40px;
+                                            // border: 1px solid #F1F1F1;
+                                            // padding: 3px 10px 3px 6px;
+                                            & .select-box {
+                                                display: flex;
+                                                width: 55px;
+                                                height: 40px;
+                                                flex-direction: column;
+                                                & .options-container {
+                                                    color: #000;
+                                                    background: white;
+                                                    max-height: 0;
+                                                    width: 100%;
+                                                    opacity: 0;
+                                                    // transition: 0.2s ease;
+                                                    // border-radius: 5px;
+                                                    overflow: hidden;
+                                                    order: 1;
+                                                    font-size: 14px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    height: 96px;
+                                                    & .option {
+                                                        padding: 8px 12px;
+                                                        cursor: pointer;
+                                                        & label {
+                                                            cursor: pointer;
+                                                        }
+                                                        & .radio {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                                & .options-container.active {
+                                                    max-height: 240px;
+                                                    opacity: 1;
+                                                    height: 100px;
+                                                    position: absolute;
+                                                    top: 33px;
+                                                    z-index: 10;
+                                                    overflow-y: scroll;
+                                                    & + .selected::before {
+                                                        transform: rotate(220deg);
+                                                    }
+                                                    & + .selected::after {
+                                                        transform: rotate(140deg);
+                                                    }
+                                                }
+                                                & .selected {
+                                                    width: 125px;
+                                                    height: 40px;
+                                                    color: #000;
+                                                    position: relative;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    order: 0;
+                                                    font-family: $inter;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+                                                    font-size: 16px;
+                                                    padding: 8px 12px;
+                                                    cursor: pointer;
+                                                    background: rgb(228, 228, 228);
+                                                    &::before {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 14px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(140deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                    &::after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        height: 7px;
+                                                        width: 2px;
+                                                        right: 10px;
+                                                        background-color: #000;
+                                                        top: 18px;
+                                                        transform: rotate(220deg);
+                                                        transition: 0.4s ease;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    & .checkbox-wrapper {
+                                        margin-top: 15px;
+                                        /* Customize the label (the container) */
+                                        & .container {
+                                            display: block;
+                                            position: relative;
+                                            padding-left: 35px;
+                                            margin-bottom: 12px;
+                                            cursor: pointer;
+                                            font-size: 18px;
+                                            -webkit-user-select: none;
+                                            -moz-user-select: none;
+                                            -ms-user-select: none;
+                                            user-select: none;
+                                            font-family: $inter;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 17px;
+                                            /* identical to box height */
+            
+                                            display: flex;
+                                            align-items: flex-end;
+            
+                                            color: #000000;
+                                        }
+                                        
+                                        /* Hide the browser's default checkbox */
+                                        & .container input {
+                                            position: absolute;
+                                            opacity: 0;
+                                            cursor: pointer;
+                                            height: 0;
+                                            width: 0;
+                                        }
+                                        
+                                        /* Create a custom checkbox */
+                                        & .checkmark {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            height: 18px;
+                                            width: 18px;
+                                            background-color: #eee;
+                                        }
+                                        
+                                        /* On mouse-over, add a grey background color */
+                                        & .container:hover input ~ .checkmark {
+                                            background-color: #ccc;
+                                        }
+                                        
+                                        /* When the checkbox is checked, add a blue background */
+                                        & .container input:checked ~ .checkmark {
+                                            background-color: #019748;
+                                        }
+                                        
+                                        /* Create the checkmark/indicator (hidden when not checked) */
+                                        & .checkmark:after {
+                                            content: "";
+                                            position: absolute;
+                                            display: none;
+                                        }
+                                        
+                                        /* Show the checkmark when checked */
+                                        & .container input:checked ~ .checkmark:after {
+                                            display: block;
+                                        }
+                                        
+                                        /* Style the checkmark/indicator */
+                                        & .container .checkmark:after {
+                                            left: 5px;
+                                            top: 1px;
+                                            width: 5px;
+                                            height: 10px;
+                                            border: solid white;
+                                            border-width: 0 2px 2px 0;
+                                            -webkit-transform: rotate(35deg);
+                                            -ms-transform: rotate(35deg);
+                                            transform: rotate(35deg);
+                                        }
+                                    }
+                                    & .email {
+                                        margin-top: 10px;
+                                        width: 327px;
+                                        height: 40px;
+                                        background: rgb(228, 228, 228);
+                                        border: 0px;
+                                        padding: 8px 12px;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        font-family: $lexend;
+                                    }
+                                }
+
+                            }
+                            & .bottom {
+                                margin-top: 44px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: baseline;
+                                & .left {
+                                    font-family: $lexend;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 20px;
+                                    line-height: 25px;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #019748;
+                                }
+                                & .right {
+                                    & .select-wrapper {
                                         display: block;
                                         position: relative;
-                                        margin-top: 0px;
-                                        width: 125px;
+                                        width: 327px;
                                         height: 40px;
                                         // border: 1px solid #F1F1F1;
                                         // padding: 3px 10px 3px 6px;
                                         & .select-box {
                                             display: flex;
-                                            width: 55px;
+                                            width: 327px;
                                             height: 40px;
                                             flex-direction: column;
                                             & .options-container {
@@ -4274,7 +3682,7 @@
                                                 width: 100%;
                                                 opacity: 0;
                                                 // transition: 0.2s ease;
-                                                // border-radius: 5px;
+                                                border-radius: 0px;
                                                 overflow: hidden;
                                                 order: 1;
                                                 font-size: 14px;
@@ -4309,17 +3717,16 @@
                                                 }
                                             }
                                             & .selected {
-                                                width: 125px;
+                                                width: 327px;
                                                 height: 40px;
                                                 color: #000;
                                                 position: relative;
                                                 display: flex;
                                                 align-items: center;
                                                 order: 0;
-                                                font-family: $inter;
-                                                font-style: normal;
-                                                font-weight: 400;
                                                 font-size: 16px;
+                                                line-height: 19px;
+                                                font-family: $lexend;
                                                 padding: 8px 12px;
                                                 cursor: pointer;
                                                 background: rgb(228, 228, 228);
@@ -4347,178 +3754,114 @@
                                                 }
                                             }
                                         }
-                                    }
-                                }
-                                & .checkbox-wrapper {
-                                    margin-top: 15px;
-                                    /* Customize the label (the container) */
-                                    & .container {
-                                        display: block;
-                                        position: relative;
-                                        padding-left: 35px;
-                                        margin-bottom: 12px;
-                                        cursor: pointer;
-                                        font-size: 18px;
-                                        -webkit-user-select: none;
-                                        -moz-user-select: none;
-                                        -ms-user-select: none;
-                                        user-select: none;
-                                        font-family: $inter;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 17px;
-                                        /* identical to box height */
-        
-                                        display: flex;
-                                        align-items: flex-end;
-        
-                                        color: #000000;
-                                    }
-                                    
-                                    /* Hide the browser's default checkbox */
-                                    & .container input {
-                                        position: absolute;
-                                        opacity: 0;
-                                        cursor: pointer;
-                                        height: 0;
-                                        width: 0;
-                                    }
-                                    
-                                    /* Create a custom checkbox */
-                                    & .checkmark {
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        height: 18px;
-                                        width: 18px;
-                                        background-color: #eee;
-                                    }
-                                    
-                                    /* On mouse-over, add a grey background color */
-                                    & .container:hover input ~ .checkmark {
-                                        background-color: #ccc;
-                                    }
-                                    
-                                    /* When the checkbox is checked, add a blue background */
-                                    & .container input:checked ~ .checkmark {
-                                        background-color: #019748;
-                                    }
-                                    
-                                    /* Create the checkmark/indicator (hidden when not checked) */
-                                    & .checkmark:after {
-                                        content: "";
-                                        position: absolute;
-                                        display: none;
-                                    }
-                                    
-                                    /* Show the checkmark when checked */
-                                    & .container input:checked ~ .checkmark:after {
-                                        display: block;
-                                    }
-                                    
-                                    /* Style the checkmark/indicator */
-                                    & .container .checkmark:after {
-                                        left: 5px;
-                                        top: 1px;
-                                        width: 5px;
-                                        height: 10px;
-                                        border: solid white;
-                                        border-width: 0 2px 2px 0;
-                                        -webkit-transform: rotate(35deg);
-                                        -ms-transform: rotate(35deg);
-                                        transform: rotate(35deg);
-                                    }
-                                }
-                                & .email {
-                                    margin-top: 10px;
-                                    width: 327px;
-                                    height: 40px;
-                                    background: rgb(228, 228, 228);
-                                    border: 0px;
-                                    padding: 8px 12px;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-family: $lexend;
-                                }
-                            }
-                        }
-                    }
-                    & .btn {
-                        position: absolute;
-                        bottom: 31px;
-                        right: 0px;
-                        width: 159px;
-                        height: 48px;
-                        padding: 0 24px;
-                        border: none;
-                        background: #019748;
-                        color: #fff;
-                        font-family: $readex;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        line-height: 24px;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                    }
-                    & .btn.prev-step {
-                        width: 160px;
-                        right: 172px;
-                        background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
-                    }
-                }
-                & .step.active {
-                    display: block;
-                }
-                & .step2 {
-                    & .content {
-                        & .left {
-                            & .info {
-                                &:last-child {
-                                    margin-top: 56px;
-                                }
-                            }
-                        }
-                        & .right {
-                            & form {
-                                & .date-wrapper {
-                                    & .date {
-                                        margin-top: 40px;
-                                        height: 40px;
-                                        width: 100%;
-                                        padding: 0px 5px 0px 12px;
-                                        font-family: $inter;
-                                        background: rgb(228, 228, 228);
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 16px;
-                                        line-height: 19px;
-                                        outline: none;
-                                        border: none;
-                                        color: #000000;
-                                        &::-webkit-calendar-picker-indicator { 
-                                            opacity: 1;
+                                        &:nth-child(2) {
+                                            margin-top: 12px;
+                                        }
+                                        &:nth-child(3) {
+                                            margin-top: 24px;
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    & .btn.prev-step {
+                    & .next-step {
+                        padding: 0px 24px;
+                        position: absolute;
                         width: 160px;
-                        right: 172px;
+                        height: 48px;
+                        left: 460px;
+                        top: 867px;
+                        background: #019748;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #FFFFFF;
+                        border: 0;
+                    }
+                    & .prev-step {
+                        padding: 0px 24px;
+                        position: absolute;
+                        width: 160px;
+                        height: 48px;
+                        left: 284px;
+                        top: 867px;
                         background: #fff;
-                        color: $green;
-                        border: 1px solid $green;
+                        font-family: $readex;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #019748;
+                        border: 1px solid #019748;;
+                    }
+                }
+                & .step.active {
+                    display: block;
+                }
+                & .step2 {
+                    & .top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                    }
+                    & .middle {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        & .left {
+                            font-family: $lexend;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 25px;
+                            display: flex;
+                            align-items: flex-end;
+                            color: #019748;
+                        }
+                        & .right {
+                            & .date-wrapper {
+                                & .date {
+                                    margin-top: 40px;
+                                    height: 40px;
+                                    width: 100%;
+                                    padding: 0px 5px 0px 12px;
+                                    font-family: $inter;
+                                    background: rgb(228, 228, 228);
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    outline: none;
+                                    border: none;
+                                    color: #000000;
+                                    &::-webkit-calendar-picker-indicator { 
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 & .step3 {
                     & .content {
+                        display: flex;
+                        justify-content: space-between;
                         & .left {
                             & .top {
+                                width: 385px;
                                 margin-top: 32px;
                                 background: #F8F7FA;
                                 padding: 24px;

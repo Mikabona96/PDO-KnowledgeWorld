@@ -140,6 +140,12 @@
                         margin-bottom: 24px;
                         &::placeholder {
                             color: #000000;
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #000000;
                         }
                     }
                     & .btn {
@@ -718,6 +724,11 @@
                         border: none;
                         margin-bottom: 24px;
                         &::placeholder {
+                            font-family: $inter;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 18px;
                             color: #000000;
                         }
                     }

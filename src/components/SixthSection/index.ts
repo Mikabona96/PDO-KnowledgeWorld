@@ -6,10 +6,10 @@ export const sixthSectionFunction = () => {
     window.addEventListener('DOMContentLoaded', () => {
         // ================================== Data ===============================
         const dataStore = {
-            bookingType:              'Individual/Family',
+            bookingType:              'Select booking type',
             name:                     '',
             secondName:               '',
-            code:                     '+1',
+            code:                     'Code',
             number:                   '',
             sendReminders:            false,
             email:                    '',
@@ -21,10 +21,10 @@ export const sixthSectionFunction = () => {
             date:                     '',
             timeSlot:                 '',
             toInitial:                function () {
-                this.bookingType = 'Individual/Family';
+                this.bookingType = 'Select booking type';
                 this.name = '';
                 this.secondName = '';
-                this.code = '+1';
+                this.code = 'Code';
                 this.number = '';
                 this.sendReminders = false;
                 this.email = '';
@@ -199,6 +199,8 @@ export const sixthSectionFunction = () => {
         const selectedCenter = (document.querySelector('.select-wrapper-center .selected')) as HTMLElement;
         const optionsContainerCenter = document.querySelector('.select-wrapper-center .options-container');
         const centerTitle = (document.querySelector('.step3 .content .title')) as HTMLElement;
+        const place = document.querySelector('.step4 .event-info .place');
+        const step4descrPlace = document.querySelector('.step4 .description .description-place');
 
         const optionsListCenter = document.querySelectorAll('.select-wrapper-center .option');
 
@@ -211,6 +213,8 @@ export const sixthSectionFunction = () => {
                 const data = o?.querySelector('label')?.innerHTML;
                 selectedCenter.innerHTML = `${data}`;
                 dataStore.center = `${data}`;
+                place!.innerHTML = dataStore.center;
+                step4descrPlace!.innerHTML = dataStore.center;
                 centerTitle.innerHTML = `${data}`;
                 optionsContainerCenter?.classList.remove('active');
             });
@@ -219,8 +223,9 @@ export const sixthSectionFunction = () => {
         const selectedTime = (document.querySelector('.select-wrapper-time .selected')) as HTMLElement;
         const optionsContainerTime = document.querySelector('.select-wrapper-time .options-container');
         const centerTime = (document.querySelector('.step3 .content .date-time .time span')) as HTMLElement;
-
+        const step4time = document.querySelector('.step4 .event-info .time-date li .time-date_time');
         const optionsListTime = document.querySelectorAll('.select-wrapper-time .option');
+        const step4descrTime = document.querySelector('.step4 .description .description-time');
 
         selectedTime?.addEventListener('click', () => {
             optionsContainerTime?.classList.toggle('active');
@@ -229,23 +234,55 @@ export const sixthSectionFunction = () => {
         optionsListTime.forEach((o) => {
             o.addEventListener('click', () => {
                 const data = o?.querySelector('label')?.innerHTML;
+                optionsContainerTime?.classList.remove('active');
                 selectedTime.innerHTML = `${data}`;
                 centerTime.innerHTML = `${data}`;
                 dataStore.timeSlot = `${data}`;
-                optionsContainerTime?.classList.remove('active');
+                step4time!.innerHTML = dataStore.timeSlot;
+                step4descrTime!.innerHTML = dataStore.timeSlot;
             });
         });
         // =============== Date Select =============
         const inputDate = document.querySelector('.step2 .date-wrapper .date');
         const centerDate = (document.querySelector('.step3 .content .date-time .date span')) as HTMLElement;
+        const step4date = document.querySelector('.step4 .event-info .time-date li .time-date_date');
+        const step4day = document.querySelector('.step4 .description .description-day');
+        const step4descrDate = document.querySelector('.step4 .description .description-date');
+
+        const defineDay = (day: number) => {
+            switch (day) {
+                case 0:
+                    return 'Sunday';
+                case 1:
+                    return 'Monday';
+                case 2:
+                    return 'Tuesday';
+                case 3:
+                    return 'Wednesday';
+                case 4:
+                    return 'Thursday';
+                case 5:
+                    return 'Friday';
+                case 6:
+                    return 'Saturday';
+                default:
+                    return '';
+            }
+        };
         inputDate?.addEventListener('change', (event) => {
             const target = event.target as HTMLInputElement;
+            const date = new Date(target.value);
+            const day = defineDay(date.getDay());
+            step4day!.innerHTML = day;
+            step4descrDate!.innerHTML = target.value.split('-').reverse()
+                .join('.');
+
             const value = target.value.split('-').reverse()
                 .join('-');
             dataStore.date = value;
             centerDate.innerHTML = `${value}`;
+            step4date!.innerHTML = dataStore.date;
         });
-
 
         // ======================= Button Navigation ========================
         const ProgressBar = (document.querySelector('.progress')) as HTMLElement;
@@ -327,20 +364,30 @@ export const sixthSectionFunction = () => {
             forms.forEach((form) => {
                 form.reset();
             });
-            selectedBookingType.innerHTML = 'Individual/Family';
-            BookingType!.innerHTML = 'Individual/Family';
+            selectedBookingType.innerHTML = 'Select booking type';
+            BookingType!.innerHTML = '';
             Name!.innerHTML = '';
             Phone!.innerHTML = '';
             Email!.innerHTML = '';
-            selectedCode.innerHTML = `<span>+${1}</span>`;
+            selectedCode.innerHTML = '<span>Code</span>';
             selectedCountry.innerHTML = 'Country';
-            selectedCenter.innerHTML = 'Ecoman Center';
-            selectedTime.innerHTML = '08:00 - 09:00';
+            selectedCenter.innerHTML = 'Select Center';
+            selectedTime.innerHTML = 'Select timeslot';
             AdultsCount!.innerHTML = '';
+            selectedAdults!.innerHTML = 'Number of Adult Visitors (18+)';
             ChildsCount!.innerHTML = '';
+            selectedChilds!.innerHTML = 'Number of Child Visitors';
             Country!.innerHTML = '';
-            centerTitle.innerHTML = 'Ecoman Center';
+            centerTitle.innerHTML = '';
+            centerTime.innerHTML = '';
             centerDate.innerHTML = '';
+            place!.innerHTML = '';
+            step4time!.innerHTML = '';
+            step4date!.innerHTML = '';
+            step4day!.innerHTML = '';
+            step4descrDate!.innerHTML = '';
+            step4descrPlace!.innerHTML = '';
+            step4descrTime!.innerHTML = '';
         };
 
         makeBookingStepperClose.addEventListener('click', () => {
